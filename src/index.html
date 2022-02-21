@@ -7,11 +7,25 @@
     <link rel="icon" href="Icon.jpg" />
   </head>
   <body>
+    <header class="header" id="header">
+      <img src="MemoryMatchLetters.jpg" id="LettersMemoryMatch">
+      <button id="Update"></button>
+      <button id="Exit"></button>
+    </header> 
     <section class="container_first"  id="first_window">   
       <img src="MemoryMatch.png" id="LogoMemoryMatch">
       <button id="Btn1">COMENZAR</button>
     </section> 
-    <div id="root"></div>
+    <section class="container"  id="second_window">  
+      <h2>Por favor ingresa tu Nickname que sera tu nombre en este juego</h3>
+      <h3>Puede contener letras y numeros, minimo 3 y maximo 10 caracteres</h4>
+      <input type="text" id="Nickname">
+      <button id="Btn2">CONTINUAR</button>
+    </section>
+    <section class="container"  id="fourth_window"> 
+      <div id="root"></div>       
+    </section> 
+    
     <script src="main.js" type="module"></script>
   </body>
 </html>

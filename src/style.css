@@ -3,10 +3,87 @@
 }
 body{
     display:block;
-    background-image: url("Background.gif");
+    background-image: url("Background3.gif");
     background-position: center;
     align-items:center;
     justify-content: center;
+}
+div{
+    display:inline-block;
+    margin-right: 1%;
+    margin-bottom:1%;
+    padding-top: 30px;
+    padding-left: 80px;
+}
+input{
+    margin-left:37%;
+    height:40px;
+    width: 20%;
+    border-radius: 10px;
+    border-color: rgb(241, 18, 241);
+    border-width: 5px;
+
+}
+#LettersMemoryMatch{
+    padding-top:1px;
+    padding-bottom:1px;
+    max-width: 15%;
+    max-height: 5%;
+    margin-left: 40%;
+}
+header{
+    background-color: rgba(223,253,39,0.8);
+    display:none;
+    pointer-events: none;
+    max-height: 100px;
+}
+h2{
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    font-family: Comic Sans MS;
+    text-shadow: 5px 3px 5px rgb(230, 69, 28);
+}
+h3{
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    font-family: Ink Free;
+    text-shadow: 5px 3px 5px rgb(230, 69, 28);
+}
+#Update{
+    background-image: url("UpdateButton.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 5%;
+    max-height: 1%;
+    margin-left: 37%;
+}
+#Exit{
+    background-image: url("ExitButton.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 5%;
+    max-height: 3%;   
+    margin-left: 0.5%;
+}
+.container{
+    display: none;
+    pointer-events: none;
+}
+.show{
+    display: block;
+    pointer-events: auto;
+}
+.hide{
+    display: none;
+    pointer-events: none;
+}
+.showheader{
+    display: flex;  
+    pointer-events: auto;
 }
 img{
     margin-left: 30%;
@@ -14,18 +91,26 @@ img{
 button{
     background-color: rgba(166,255,0.5);
     display: block;
-    margin: auto;
-    width: 30%;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin-left: 37%;
+    width: 20%;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin-top: 30px;
     border-radius: 10px;
     font-size: large;
     font-weight: 800;
-    box-shadow: 0 4px 10px rgb(255,255,255);
+    
     cursor: pointer;
+}
+.Card{
+    width: 10rem;
+    height: 10rem;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center; 
 }
 button:hover{
     background: rgb(19, 241, 149);
     color:rgb(255, 253, 253);
+    box-shadow: 0 4px 10px rgb(255,255,255);
 }
