@@ -14,18 +14,29 @@
 //   .catch(console.error);
 //
 
+
 const App = (numCard) => {
-  console.log(pokemon);
+  
+  let arrayData=pokemon.items.sort(function() {return Math.random() - 0.5 });
+
   let arrayCard=[];
   for (let index = 0; index < numCard; index++) {
+
     const el = document.createElement('div');
     el.className = 'Card';
-    el.textContent = pokemon.items[index].id;
-    el.style.backgroundColor = pokemon.items[index].bgColor;
-    el.style.backgroundImage = 'url("'+pokemon.items[index].image+'")';
+    el.textContent = arrayData[index].id;
+    el.style.backgroundColor = arrayData[index].bgColor;
+    el.style.backgroundImage = 'url("'+arrayData[index].image+'")';
+    const el2 = document.createElement('div');
+    el2.className = 'Card';
+    el2.textContent = arrayData[index].id;
+    el2.style.backgroundColor = arrayData[index].bgColor;
+    el2.style.backgroundImage = 'url("'+arrayData[index].image+'")';
     arrayCard.push(el);
+    arrayCard.push(el2);
+
   }
-  return arrayCard;
+  return arrayCard.sort(function() {return Math.random() - 0.5 });
 };
 
 export default App;
