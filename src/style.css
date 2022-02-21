@@ -1,0 +1,7 @@
+.Card{
+    width: 10rem;
+    height: 10rem;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
