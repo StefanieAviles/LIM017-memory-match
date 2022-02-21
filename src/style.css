@@ -86,7 +86,7 @@ h3{
     pointer-events: auto;
 }
 img{
-    margin-left: 30%;
+    margin-left: 25%;
 }
 button{
     background-color: rgba(166,255,0.5);
@@ -98,8 +98,7 @@ button{
     margin-top: 30px;
     border-radius: 10px;
     font-size: large;
-    font-weight: 800;
-    
+    font-weight: 800;    
     cursor: pointer;
 }
 .Card{
