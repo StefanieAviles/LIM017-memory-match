@@ -1,5 +1,6 @@
 import App from './components/App.js';
 
+<<<<<<< HEAD
 //document.getElementById('root').appendChild(App());
 
 const first_window = document.getElementById('first_window');
@@ -9,9 +10,6 @@ const header_windows = document.getElementById('header');
 
 const startButton = document.getElementById('Btn1');
 const continueButton = document.getElementById('Btn2');
-
-const numCard=9;
-
 
 startButton.addEventListener('click', ()=> {
     console.log('entre');
@@ -27,3 +25,16 @@ continueButton.addEventListener('click', ()=> {
     header_windows.classList.add("showheader");
     fourth_window.classList.add("show");
 });
+const numCard=4;
+
+App(numCard).forEach(element => {
+    document.getElementById('root').appendChild(element);
+}); 
+document.getElementsByClassName('Card').forEach(function(element) {
+    element.addEventListener('click', myFunction);
+  });
+
+  function myFunction(){
+      console.log("1");
+  }
+
