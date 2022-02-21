@@ -1,7 +1,15 @@
 import App from './components/App.js';
 
 const numCard=4;
-for (let index = 0; index <numCard; index++) {
-    document.getElementById('root').appendChild(App(numCard)[index]);
-}
+
+App(numCard).forEach(element => {
+    document.getElementById('root').appendChild(element);
+}); 
+document.getElementsByClassName('Card').forEach(function(element) {
+    element.addEventListener('click', myFunction);
+  });
+
+  function myFunction(){
+      console.log("1");
+  }
 
