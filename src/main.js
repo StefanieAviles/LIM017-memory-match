@@ -15,23 +15,20 @@ startButton.addEventListener('click', ()=> {
     header_windows.classList.add("showheader");
     first_window.classList.add("hide");
 });
-for (let index = 0; index <numCard; index++) {
-    document.getElementById('root').appendChild(App(numCard)[index]);
-}
 
-App(numCard).forEach(element => {
-    document.getElementById('root').appendChild(element);
-}); 
-/*document.getElementsByClassName('Card').forEach(function(element){
-    element.addEventListener('click', myFunction);
-});*/
-
-function myFunction(){
-    console.log("1");
-}
 continueButton.addEventListener('click', ()=> {
     second_window.classList.remove("show");
     header_windows.classList.add("showheader");
     fourth_window.classList.add("show");
 });
+
+App(numCard).forEach(element => {
+    document.getElementById('root').appendChild(element);
+    element.addEventListener('click', myFunction);
+}); 
+
+function myFunction() {
+    console.log("");
+}
+
 

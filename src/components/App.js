@@ -4,9 +4,7 @@
 //
 
 import pokemon from '../data/pokemon/pokemon.js';
-// console.log(pokemon);
 
- 
 // O alternativamente podríamos cargar el JSON de forma asíncrona usando
 // `fetch` en el momento que consideremos necesario.
 //
