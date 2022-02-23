@@ -5,7 +5,7 @@
 }
 body{
     display:block;
-    background-image: url("Background3.gif");
+    background-image: url("image/Background3.gif");
     background-position: center;
     align-items:center;
     justify-content: center;
@@ -89,7 +89,7 @@ h3{
 }
 #Update{
     display: flex;
-    background-image: url("UpdateButton.jpg");
+    background-image: url("image/UpdateButton.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -98,7 +98,7 @@ h3{
     margin-left: 27em;
 }
 #Exit{
-    background-image: url("ExitButton.jpg");
+    background-image: url("image/ExitButton.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
