@@ -14,7 +14,6 @@ const playButton = document.getElementById("Btn3");
 const numCard=8;
 
 startButton.addEventListener("click", ()=> {
-    console.log("entre");
     second_window.classList.add("show");
     header_windows.classList.add("showheader");
     first_window.classList.add("hide");

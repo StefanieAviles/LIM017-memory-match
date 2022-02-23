@@ -61,7 +61,7 @@ varias personas acerca de lo que esperarian de un juego con las caracteristicas 
 |Debe ser responsive|
 |***DEFINICION DE TERMINADO***|
 |El jugador ha encontrado todos los pares de las cartas mostradas|
-| ***HISTORIA DE USUARIO 4:*** Como jugador deseo que se me permita ver mis resultados finales|
+| ***HISTORIA DE USUARIO 5:*** Como jugador deseo que se me permita ver mis resultados finales|
 ||
 |***CRITERIOS DE ACEPTACION***|
 |Se debe mostrar el tiempo que le tomo al jugador resolver el juego|
