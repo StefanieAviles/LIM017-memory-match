@@ -30,33 +30,44 @@ varias personas acerca de lo que esperarian de un juego con las caracteristicas 
 |---------------------------|
 ||
 |***CRITERIOS DE ACEPTACION***|
-|El nickname solo puede contener letras y números y tener un tamaño de hasta 3 a 10 elementos
-|La caja de texto para ingresar el nickname no puede estar vacia |
+|Debe existir una caja de texto|
+|Debe existir un boton para continuar|
+|Debe ser responsive| |
 |***DEFINICION DE TERMINADO***|
-|El nickname ha pasado por la función de validación implementada para este fin|
-|La función ha pasado por los tests|
+|Se debe poder acceder al nickname ingresado por el usuario y guardarlo en una variable|
 ||
 | ***HISTORIA DE USUARIO 2:*** Como jugador deseo que se me permita escoger un tipo de baraja |
 ||
 |***CRITERIOS DE ACEPTACION***|
-|Se debe elegir alguna de las opciones presentadas dando click en una de ellas|
-|Obligatoriamente debe elegir una de ellas|
+|Se debe mostrar el tipo de barajas que se puede elegir|
+|Debe existir un medio donde pueda seleccionar mi opcion|
+|Debe existir un boton para continuar|
+|Debe ser responsive|
 |***DEFINICION DE TERMINADO***|
-|Se ha validado que se ha elegido una de las opciones|
+|Se puede acceder a la eleccion del usuario|
 | ***HISTORIA DE USUARIO 3:*** Como jugador deseo que se me permita elegir un nivel de dificultad|
 ||
 |***CRITERIOS DE ACEPTACION***|
-|Se debe elegir alguna de las opciones presentadas dando click en una de ellas|
-|Obligatoriamente debe elegir una de ellas|
+|Se debe mostrar una lista de las opciones entre las que se puede elegir|
+|Debe existir un boton para continuar|
+|Debe ser responsive|
 |***DEFINICION DE TERMINADO***|
-|Se ha validado que se ha elegido una de las opciones|
-| ***HISTORIA DE USUARIO 4:*** Como jugador deseo que se me permita ver mi puntaje final|
+|Se puede acceder a la eleccion del usuario|
+| ***HISTORIA DE USUARIO 4:*** Como jugador deseo que se me permita visualizar un juego que me permita voltear cartas y buscar sus pares|
 ||
 |***CRITERIOS DE ACEPTACION***|
-|El jugador debe haber terminado de voltear todas las cartas|
+|Se debe poder visualizar un tablero de cartas|
+|Al dar click en una carta esta debe mostrar su contenido|
+|Debe ser responsive|
 |***DEFINICION DE TERMINADO***|
-|Se muestra puntaje final obtenido en pantalla|
-
+|El jugador ha encontrado todos los pares de las cartas mostradas|
+| ***HISTORIA DE USUARIO 4:*** Como jugador deseo que se me permita ver mis resultados finales|
+||
+|***CRITERIOS DE ACEPTACION***|
+|Se debe mostrar el tiempo que le tomo al jugador resolver el juego|
+|Se debe mostar el puesto en el ranking que gano en el juego con su tiempo obtenido|
+|***DEFINICION DE TERMINADO***|
+|Se accede al ranking existente y al tiempo que le llevo al jugador resolverlo y se muestra en pantalla|
 ***
 #### Prototipo de baja fidelidad
 

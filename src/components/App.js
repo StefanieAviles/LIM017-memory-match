@@ -19,15 +19,14 @@ const App = (numCard) => {
 
   let arrayCard=[];
   for (let index = 0; index < numCard; index++) {
-
     const el = document.createElement('div');
     el.className = 'Card';
-    el.textContent = arrayData[index].id;
+    el.id = arrayData[index].id;
     el.style.backgroundColor = arrayData[index].bgColor;
     el.style.backgroundImage = 'url("'+arrayData[index].image+'")';
     const el2 = document.createElement('div');
     el2.className = 'Card';
-    el2.textContent = arrayData[index].id;
+    el2.id = arrayData[index].id;
     el2.style.backgroundColor = arrayData[index].bgColor;
     el2.style.backgroundImage = 'url("'+arrayData[index].image+'")';
     arrayCard.push(el);

@@ -1,5 +1,7 @@
 *{
     box-sizing: border-box;
+    padding:0;
+    margin:0;
 }
 body{
     display:block;
@@ -15,21 +17,55 @@ div{
     padding-top: 30px;
     padding-left: 80px;
 }
+#level_selection{
+    display: flex;
+    margin-left:15em;
+    margin-bottom: 5em;
+}
 input{
-    margin-left:37%;
-    height:40px;
-    width: 20%;
-    border-radius: 10px;
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    height:6vh;
+    width: 20vw;
+    border-radius: 0.625em;
     border-color: rgb(241, 18, 241);
-    border-width: 5px;
+    border-width: 0.3125em;
 
 }
+label{
+    display: inline-block;
+    margin-left: 15em;
+    margin-bottom: 4em;
+    cursor: pointer;
+}
+.radio_img{
+    height:7em;
+    width: 20em;
+    border-radius:0.625em;
+    box-shadow: 0.25em 0.25em 0.625em rgb(248, 245, 248);
+    margin-top: 1em;
+}
+.radioButton{
+    height:4vh;
+    width: 4vw;
+}
 #LettersMemoryMatch{
-    padding-top:1px;
-    padding-bottom:1px;
-    max-width: 15%;
-    max-height: 5%;
-    margin-left: 40%;
+    display:flex;
+    margin-left:36em;
+    padding-top:0.0625em;
+    padding-bottom:0.0625em;
+    max-width: 50em;
+    max-height: 4.5em;
+}
+select{
+    display:inline-block;
+    margin-left:3em;
+    border-radius: 0.625em;
+    border-color: rgb(241, 18, 241);
+    border-width: 0.3125em;
+    font-size: 1em;
+    font-family: Comic Sans MS;
 }
 header{
     background-color: rgba(223,253,39,0.8);
@@ -40,34 +76,35 @@ header{
 h2{
     text-align: center;
     color: #fff;
-    font-size: 40px;
+    font-size: 2.5em;
     font-family: Comic Sans MS;
     text-shadow: 5px 3px 5px rgb(230, 69, 28);
 }
 h3{
     text-align: center;
     color: #fff;
-    font-size: 30px;
+    font-size: 1.875em;
     font-family: Ink Free;
     text-shadow: 5px 3px 5px rgb(230, 69, 28);
 }
 #Update{
+    display: flex;
     background-image: url("UpdateButton.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    max-width: 5%;
-    max-height: 1%;
-    margin-left: 37%;
+    max-width: 5em;
+    max-height: 5em;
+    margin-left: 27em;
 }
 #Exit{
     background-image: url("ExitButton.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    max-width: 5%;
-    max-height: 3%;   
-    margin-left: 0.5%;
+    max-width: 5em;
+    max-height: 3em;   
+    margin-left: 1em;
 }
 .container{
     display: none;
@@ -86,13 +123,16 @@ h3{
     pointer-events: auto;
 }
 img{
-    margin-left: 25%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 button{
     background-color: rgba(166,255,0.5);
     display: block;
-    margin-left: 37%;
-    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20vw;
     padding-top: 10px;
     padding-bottom: 10px;
     margin-top: 30px;
@@ -102,11 +142,12 @@ button{
     cursor: pointer;
 }
 .Card{
-    width: 10rem;
-    height: 10rem;
+    width: 9rem;
+    height: 12rem;
     display: inline-block;
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;
+    border-radius:0.5em; 
 }
 button:hover{
     background: rgb(19, 241, 149);

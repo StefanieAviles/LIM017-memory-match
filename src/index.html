@@ -5,6 +5,7 @@
     <title>Memory Match</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="Icon.jpg" />
+   
   </head>
   <body>
     <header class="header" id="header">
@@ -17,23 +18,30 @@
       <button id="Btn1">COMENZAR</button>
     </section> 
     <section class="container"  id="second_window">  
-      <h2>Por favor ingresa tu Nickname que sera tu nombre en este juego</h3>
-      <h3>Puede contener letras y numeros, minimo 3 y maximo 10 caracteres</h4>
+      <h2>Por favor ingresa tu Nickname que sera tu nombre en este juego</h2>
+      <h3>Puede contener letras y numeros, minimo 3 y maximo 10 caracteres</h3>
       <input type="text" id="Nickname">
       <button id="Btn2">CONTINUAR</button>
     </section>
     <section class="container"  id="third_window">  
-      <h2>Hola NICKNAME</h3>
-      <h3>Por favor elije el tema de tu baraja</h4>
+      <h2>Hola NICKNAME</h2>
+      <h3>Por favor elije el tema de tu baraja</h3>
       <label>
-        <input type="radio" id="radio_pokemon"/>
-        <img src="PokemonLetters.jpg" id="pokemon_letters">
+        <input type="radio" class="radioButton" name="card_selection" id="radio_pokemon"/>
+        <img src="PokemonLetters.jpg"  class= "radio_img" id="pokemon_letters">
       </label>
       <label>
-        <input type="radio" id="radio_web"/>
-        <img src="WebDevelopLetters.jpg" id="web_letters">
+        <input type="radio" class = "radioButton" name="card_selection" id="radio_web"/>
+        <img src="WebDevelopLetters.jpg" class= "radio_img" id="web_letters">
       </label>
-      <input type="text" id="Nickname">
+      <div id="level_selection">
+        <h3>Ahora elije el nivel en el que deseas jugar</h3>
+        <select id="level">
+          <option value="1">Facil</option>
+          <option value="2">Intermedio</option>
+          <option value="3">Dificil</option>
+        </select>
+      </div>
       <button id="Btn3">JUGAR</button>
     </section>
     <section class="container"  id="fourth_window"> 
