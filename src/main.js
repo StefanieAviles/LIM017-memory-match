@@ -30,12 +30,15 @@ playButton.addEventListener("click", ()=> {
     third_window.classList.remove("show");
     header_windows.classList.add("showheader");
     fourth_window.classList.add("show");
+
     App(numCard).forEach(element => {
         document.getElementById("root").appendChild(element);
-        element.addEventListener("click", myFunction);
+        element.addEventListener("click", function(){
+            myFunction(element.id);
+        });
     });     
-    function myFunction() {
-        console.log("heyyy");
+    function myFunction(id) {
+        console.log(id);
     }
     
 });

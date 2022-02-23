@@ -11,7 +11,7 @@ El objetivo del juego es destapar parejas de cartas que coincidan e ir sumando
 puntos mientras un cronometro controla el tiempo que el usuario tarda en
 encontrar todos los pares.
 
-![Concentration (card game)](MemoryGame.png)
+![Concentration (card game)](image/MemoryGame.png)
 
 _Imagen tomada de [PlayMonster](https://www.playmonster.com/product/memory-card-matching-game/)_.
 
