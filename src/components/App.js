@@ -34,4 +34,5 @@ const App = (numCard) => {
   }
   return arrayCard.sort(function() {return Math.random() - 0.5 });
 };
+
 export default App;

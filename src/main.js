@@ -1,4 +1,5 @@
 import App from "./components/App.js";
+import game from "./components/game.js";
 
 const first_window = document.getElementById("first_window");
 const second_window = document.getElementById("second_window");
@@ -30,15 +31,12 @@ playButton.addEventListener("click", ()=> {
     header_windows.classList.add("showheader");
     fourth_window.classList.add("show");
 
-    App(numCard).forEach(element => {
-        document.getElementById("root").appendChild(element);
-        element.addEventListener("click", function(){
-            myFunction(element.id);
-        });
-    });     
-    function myFunction(id) {
-        console.log(id);
-    }
+App(numCard).forEach(element => {
+    document.getElementById("root").appendChild(element);
+    element.addEventListener("click", function(){
+    game.clickCard(element.id);
+    });
+});     
     
 });
 
