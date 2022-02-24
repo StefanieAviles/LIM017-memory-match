@@ -179,7 +179,13 @@ button:hover{
     background-size: cover;
     transform: rotateY(180deg);
 }
+<<<<<<< HEAD
 
 .error_input{
     border-color: red;
+=======
+.error_input{
+    border-color: red;
+
+>>>>>>> 168b8efe54669b0b374bdfe3f71722d8be27ecd7
 }
