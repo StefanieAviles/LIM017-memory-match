@@ -14,9 +14,8 @@ import pokemon from '../data/pokemon/pokemon.js';
 //   .catch(console.error);
 //
 const App = (numCard) => {
-  
-  let arrayData=pokemon.items.sort(function() {return Math.random() - 0.5 });
-
+  let arrayData=[];  
+  arrayData=pokemon.items.sort(function() {return Math.random() - 0.5 });
   let arrayCard=[];
   for (let index = 0; index < numCard; index++) {
     const el = document.createElement('div');
@@ -24,11 +23,13 @@ const App = (numCard) => {
     el.id = arrayData[index].id;
     el.style.backgroundColor = arrayData[index].bgColor;
     el.style.backgroundImage = 'url("'+arrayData[index].image+'")';
+    el.classList.add("flipBack");
     const el2 = document.createElement('div');
     el2.className = 'Card';
     el2.id = arrayData[index].id;
     el2.style.backgroundColor = arrayData[index].bgColor;
     el2.style.backgroundImage = 'url("'+arrayData[index].image+'")';
+    el2.classList.add("flipBack");
     arrayCard.push(el);
     arrayCard.push(el2);
   }
