@@ -87,6 +87,7 @@ function validate_select(){
 }
 //Damos funcionalidad al boton para mostrar la siguiente ventana    
 playButton.addEventListener("click", ()=> {
+
     //Si al menos eligio una baraja y un nivel muestra la siguiente pantalla   
     if(validate_radio() && validate_select()) {
         third_window.classList.remove("show");
@@ -97,7 +98,7 @@ playButton.addEventListener("click", ()=> {
         array_cards.forEach(element => {
             document.getElementById("root").appendChild(element);
             element.addEventListener("click", function(){
-                game.clickCard(element.id);
+                game.clickCard(element);
             });
         }); 
         updateButton.addEventListener("click", ()=> {
@@ -109,14 +110,14 @@ playButton.addEventListener("click", ()=> {
             array_cards.forEach(element => {
             document.getElementById("root").appendChild(element);
             element.addEventListener("click", function(){
-                game.clickCard(element.id);
+                game.clickCard(element);
             });
         }); 
             
         });
     }else{
         alert ("Debes elegir al menos un tipo de baraja y un nivel");
-    }       
+    }    
 });
 
 
