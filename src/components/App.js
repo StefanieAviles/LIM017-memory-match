@@ -14,9 +14,8 @@ import pokemon from '../data/pokemon/pokemon.js';
 //   .catch(console.error);
 //
 const App = (numCard) => {
-  
-  let arrayData=pokemon.items.sort(function() {return Math.random() - 0.5 });
-
+  let arrayData=[];  
+  arrayData=pokemon.items.sort(function() {return Math.random() - 0.5 });
   let arrayCard=[];
   for (let index = 0; index < numCard; index++) {
     const el = document.createElement('div');

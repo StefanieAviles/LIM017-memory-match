@@ -10,6 +10,14 @@ body{
     align-items:center;
     justify-content: center;
 }
+p{
+    font-size:1.5em;
+    font-family: Ink Free;
+    color: red;
+    font-weight: bold;
+    text-shadow: 0em 0em 1em greenyellow;
+    text-align: center;
+}
 div{
     display:inline-block;
     margin-right: 1%;
@@ -77,6 +85,13 @@ h2{
     text-align: center;
     color: #fff;
     font-size: 2.5em;
+    font-family: Comic Sans MS;
+    text-shadow: 5px 3px 5px rgb(230, 69, 28);
+}
+span{
+    text-align: center;
+    color: #fff;
+    font-size: 1em;
     font-family: Comic Sans MS;
     text-shadow: 5px 3px 5px rgb(230, 69, 28);
 }
@@ -153,4 +168,7 @@ button:hover{
     background: rgb(19, 241, 149);
     color:rgb(255, 253, 253);
     box-shadow: 0 4px 10px rgb(255,255,255);
+}
+.error_input{
+    border-color: red;
 }

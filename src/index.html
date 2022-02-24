@@ -18,13 +18,14 @@
       <button id="Btn1">COMENZAR</button>
     </section> 
     <section class="container"  id="second_window">  
-      <h2>Por favor ingresa tu Nickname que sera tu nombre en este juego</h2>
-      <h3>Puede contener letras y numeros, minimo 3 y maximo 10 caracteres</h3>
-      <input type="text" id="Nickname">
+      <br><h2>Por favor ingresa tu Nickname que sera tu nombre en este juego</h2><br><br><br>
+      <h3>Puede contener letras y numeros, minimo 3 y maximo 10 caracteres</h3><br><br>
+      <input type="text" id="Nickname"><br>
+      <p id="error_message"><br></p>
       <button id="Btn2">CONTINUAR</button>
     </section>
     <section class="container"  id="third_window">  
-      <h2>Hola NICKNAME</h2>
+      <h2>Hola <span id="span_nickname"></span></h2><br>
       <h3>Por favor elije el tema de tu baraja</h3>
       <label>
         <input type="radio" class="radioButton" name="card_selection" id="radio_pokemon"/>
@@ -37,6 +38,7 @@
       <div id="level_selection">
         <h3>Ahora elije el nivel en el que deseas jugar</h3>
         <select id="level">
+          <option value="0">Seleccionar...</option>
           <option value="1">Facil</option>
           <option value="2">Intermedio</option>
           <option value="3">Dificil</option>
