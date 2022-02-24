@@ -32,9 +32,10 @@ playButton.addEventListener("click", ()=> {
     fourth_window.classList.add("show");
 
 App(numCard).forEach(element => {
+    element.classList.add("flipBack");
     document.getElementById("root").appendChild(element);
     element.addEventListener("click", function(){
-    game.clickCard(element.id);
+    game.clickCard(element);
     });
 });     
     
