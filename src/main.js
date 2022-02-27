@@ -11,6 +11,7 @@ const header_windows = document.getElementById("header");
 const label_error = document.getElementById("error_message");
 const show_nickname = document.getElementById("span_nickname");
 const input = document.getElementById("Nickname");
+const level = document.getElementById("level");
 
 const startButton = document.getElementById("Btn1");
 const continueButton = document.getElementById("Btn2");
@@ -18,9 +19,9 @@ const playButton = document.getElementById("Btn3");
 const updateButton = document.getElementById("Update");
 const exitButton = document.getElementById("Exit");
 
-const numCard=8;
 const pattern = new RegExp("^[A-Za-z0-9]+$");
 let array_cards = [];
+let numCard=0;
 
 //Damos funcionalidad al boton de la 1era ventana, para que la oculte y muestre la siguiente
 startButton.addEventListener("click", ()=> {
@@ -67,8 +68,6 @@ continueButton.addEventListener("click", ()=> {
 });
 //Funcion que valida si al menos se ha elegido un tipo de baraja
 function validate_radio(){
-    console.log("entre a radio");
-    console.log(document.querySelector('input[name="card_selection"]:checked'));
     if(!document.querySelector('input[name="card_selection"]:checked')){
         return false;
     }else{
@@ -77,9 +76,7 @@ function validate_radio(){
 }
 //Funcion que valida si al menos se ha elegido un nivel de juego
 function validate_select(){
-    console.log("entre a select");
-    console.log(document.getElementById("level").value);
-    if(document.getElementById("level").value === "0"){
+    if(level.value === "0"){
         return false;
     }else{
         return true;
@@ -93,12 +90,21 @@ playButton.addEventListener("click", ()=> {
         third_window.classList.remove("show");
         header_windows.classList.add("showheader");
         fourth_window.classList.add("show");
+        //Para el nivel Facil se jugara con 6 cartas, Intermedio 12 cartas, y dificl 18 cartas
+        if(level.value ==="1"){
+            numCard=3;
+        }else if(level.value ==="2"){
+            numCard=6;
+        }
+        else{
+            numCard=9;
+        }
         //Invocamos a APP
-        array_cards=App(numCard);
+        array_cards=App(numCard,document.querySelector('input[name="card_selection"]:checked').id);
         array_cards.forEach(element => {
             document.getElementById("root").appendChild(element);
             element.addEventListener("click", function(){
-                game.clickCard(element);
+                game.clickCard(element,document.querySelector('input[name="card_selection"]:checked').id);
             });
         }); 
         updateButton.addEventListener("click", ()=> {
@@ -117,11 +123,7 @@ playButton.addEventListener("click", ()=> {
         });
     }else{
         alert ("Debes elegir al menos un tipo de baraja y un nivel");
-<<<<<<< HEAD
     }       
-=======
-    }    
->>>>>>> 168b8efe54669b0b374bdfe3f71722d8be27ecd7
 });
 
 

@@ -3,15 +3,20 @@
     padding:0;
     margin:0;
 }
+html{
+    font-size:1px;
+}
+
 body{
     display:block;
     background-image: url("image/Background3.gif");
     background-position: center;
     align-items:center;
     justify-content: center;
+    height: 100%;
 }
 p{
-    font-size:1.5em;
+    font-size:x-large;
     font-family: Ink Free;
     color: red;
     font-weight: bold;
@@ -19,108 +24,143 @@ p{
     text-align: center;
 }
 div{
-    display:inline-block;
-    margin-right: 1%;
-    margin-bottom:1%;
-    padding-top: 30px;
-    padding-left: 80px;
-}
-#level_selection{
     display: flex;
-    margin-left:15em;
-    margin-bottom: 5em;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-content: center;
+}
+.Card{
+    width: 150rem;
+    height: 220rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius:10rem; 
+    margin: 5rem;
+    transition: 0.6s;
+}
+#cards_type{
+    padding-top:0rem;
+    justify-content:space-evenly;
+    margin-bottom: 20rem;
+}
+select{
+    border-radius: 3rem;
+    border-color: rgb(241, 18, 241);
+    border-width: 2rem;
+    font-size:medium;
+    font-family: Comic Sans MS;
+    width: max-content;
+    margin-top: 0rem;
 }
 input{
     display: block;
     margin-left:auto;
     margin-right:auto;
-    height:6vh;
-    width: 20vw;
+    height:40rem;
+    width: 300rem;
     border-radius: 0.625em;
     border-color: rgb(241, 18, 241);
     border-width: 0.3125em;
-
 }
 label{
-    display: inline-block;
-    margin-left: 15em;
-    margin-bottom: 4em;
     cursor: pointer;
 }
 .radio_img{
-    height:7em;
-    width: 20em;
-    border-radius:0.625em;
-    box-shadow: 0.25em 0.25em 0.625em rgb(248, 245, 248);
-    margin-top: 1em;
+    height:100rem;
+    width: 250rem;
+    border-radius:5rem;
+    box-shadow: 3rem 3rem 5rem rgb(248, 245, 248);
+    margin-top: 5rem;
 }
 .radioButton{
-    height:4vh;
-    width: 4vw;
+    height: 20rem;
+    width: 20rem;
 }
-#LettersMemoryMatch{
-    display:flex;
-    margin-left:36em;
-    padding-top:0.0625em;
-    padding-bottom:0.0625em;
-    max-width: 50em;
-    max-height: 4.5em;
-}
+
 select{
-    display:inline-block;
-    margin-left:3em;
-    border-radius: 0.625em;
+    border-radius: 3rem;
+    margin-left: 45%;
+    margin-bottom:10rem;
     border-color: rgb(241, 18, 241);
-    border-width: 0.3125em;
-    font-size: 1em;
+    border-width: 2rem;
+    font-size:medium;
     font-family: Comic Sans MS;
+    width: max-content;
 }
 header{
     background-color: rgba(223,253,39,0.8);
     display:none;
     pointer-events: none;
-    max-height: 100px;
+    width: 100%;
+    height: 60rem;
 }
+#Update{    
+    display: inline-block;
+    background-image: url("image/UpdateButton.jpg");
+    width: 50rem;
+    height: 50rem;   
+    margin-right: 5rem;
+    
+}
+#Exit{
+    display: inline-block;
+    background-image: url("image/ExitButton.jpg");
+    width: 50rem;
+    height: 50rem;  
+}
+#LettersMemoryMatch{
+    background-image: url("image/MemoryMatchLetters.jpg");
+    width: 170rem;
+    height: 60rem;
+    margin-left:1%;
+    margin-top:0;
+}
+.nav_buttons{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;      
+    border-radius: 5rem;
+    margin-top: 5rem;
+
+}
+ul{
+    display: flex;
+    margin-right: 5rem;
+}
+#Exit:hover , #Update:hover{
+    box-shadow: 2rem 2rem 20rem rgb(56, 54, 53);
+}
+nav{
+    display:flex;
+    justify-content:space-between;
+    
+}
+
 h2{
+    padding-top:40rem;
+    margin-bottom:40rem;
     text-align: center;
     color: #fff;
-    font-size: 2.5em;
+    font-size: 35rem;
     font-family: Comic Sans MS;
     text-shadow: 5px 3px 5px rgb(230, 69, 28);
 }
 span{
     text-align: center;
-    color: #fff;
-    font-size: 1em;
+    color: rgb(237, 241, 21);
+    font-size: 35rem;
     font-family: Comic Sans MS;
     text-shadow: 5px 3px 5px rgb(230, 69, 28);
 }
 h3{
-    text-align: center;
+    text-align: center;    
+    margin-bottom:40rem;
     color: #fff;
-    font-size: 1.875em;
+    font-size: 30rem;
     font-family: Ink Free;
     text-shadow: 5px 3px 5px rgb(230, 69, 28);
 }
-#Update{
-    display: flex;
-    background-image: url("image/UpdateButton.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    max-width: 5em;
-    max-height: 5em;
-    margin-left: 27em;
-}
-#Exit{
-    background-image: url("image/ExitButton.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    max-width: 5em;
-    max-height: 3em;   
-    margin-left: 1em;
-}
+
 .container{
     display: none;
     pointer-events: none;
@@ -134,11 +174,14 @@ h3{
     pointer-events: none;
 }
 .showheader{
-    display: flex;  
+    display: inline-block;  
     pointer-events: auto;
 }
 img{
     display: block;
+    width: 45%;
+    height:45%;
+    margin-top: 40rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -147,45 +190,62 @@ button{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 20vw;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-top: 30px;
-    border-radius: 10px;
-    font-size: large;
+    width: 20%;
+    height: 10%;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    margin-top: 40rem;
+    border-radius: 10rem;
+    font-size: 15rem;
     font-weight: 800;    
     cursor: pointer;
 }
-.Card{
-    width: 9rem;
-    height: 12rem;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius:0.5em; 
-    transition: 0.6s;
-}
-
 button:hover{
     background: rgb(19, 241, 149);
     color:rgb(255, 253, 253);
     box-shadow: 0 4px 10px rgb(255,255,255);
 }
-
-.flipBack{
+.flipBack1{
     background-image: url("image/BarajaPokemon.jpg") !important;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     transform: rotateY(180deg);
 }
-<<<<<<< HEAD
-
+.flipBack2{
+    background-image: url("image/BarajaWeb.jpg") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transform: rotateY(180deg);
+}
 .error_input{
     border-color: red;
-=======
-.error_input{
-    border-color: red;
-
->>>>>>> 168b8efe54669b0b374bdfe3f71722d8be27ecd7
+}
+@media (max-width:800px) {
+    html{
+        font-size:0.7px;
+    }
+    
+    #cards_type{
+        flex-direction: column;
+    }
+    .Card{
+        width: 130rem;
+        height: 180rem;
+        margin:4rem;
+    }
+    select{
+        margin-left: 35%;        
+        font-size:small;
+    }
+    img{
+        width: 100%;
+        height:100%;
+        margin-top: 250rem;
+    }
+    input{
+        width:300rem;
+        height:50rem;
+    }
 }
