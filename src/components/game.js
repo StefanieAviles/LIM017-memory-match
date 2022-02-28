@@ -8,7 +8,6 @@ const game = {
     clickCard: function(element,card_selection){
         if(active===true){
             let flipBack="";
-            ///////
             if(card_selection==="radio_pokemon"){
                 flipBack="flipBack1";
             }else{
@@ -27,10 +26,12 @@ const game = {
                     setTimeout(() => {            
                         selectCard1.classList.add(flipBack);
                         selectCard2.classList.add(flipBack);
+                        card_audio.play();
                         active=true;
                     }, 1000);
                 }
                 else{
+                    
                     active=true;
                     correct_audio.play();
                 }
@@ -47,8 +48,7 @@ const game = {
         if (selectCard1.id===selectCard2.id) {
             return true;
         }
-        else {            
-            card_audio.play();
+        else {                    
             return false;
         }  
     }
