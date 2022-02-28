@@ -34,6 +34,8 @@ const game = {
                     
                     active=true;
                     correct_audio.play();
+                    selectCard1.classList.add("showAnimation");
+                    selectCard2.classList.add("showAnimation");
                 }
             
             }

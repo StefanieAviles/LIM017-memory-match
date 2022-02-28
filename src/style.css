@@ -219,21 +219,32 @@ button:hover{
 .error_input{
     border-color: red;
 }
-.cardAudio{
-    src: url("audio/CardSound.mp3");  
-}
-.correctAudio{
-    src: url("audio/CorrectSound.mp3");
-}
 
-.timer {
+.timer{
     font-size:40px;
     color:black;
     width: 170rem;
     height: 60rem;
     margin-left:1%;
     margin-top:0;
-  }
+}
+.showAnimation{
+    animation: waves 2s linear 0.1s;
+}
+@keyframes waves{
+    0%{
+        box-shadow: 0 0 0 0 rgba(174, 231, 67,0.6),0 0 0 0 rgba(174, 231, 67,0.6);
+    }
+    30%{
+        box-shadow: 0 0 0 50rem rgba(174, 231, 67,0),0 0 0 0 rgba(174, 231, 67,0.6);
+    }
+    65%{
+        box-shadow: 0 0 0 50rem rgba(174, 231, 67,0),0 0 0 30rem rgba(174, 231, 67,0);
+    }
+    100%{
+        box-shadow: 0 0 0 0 rgba(174, 231, 67,0),0 0 0 30rem rgba(174, 231, 67,0);
+    }
+}
 
 @media (max-width:800px) {
     html{
