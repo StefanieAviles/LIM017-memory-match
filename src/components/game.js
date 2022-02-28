@@ -51,6 +51,20 @@ const game = {
         else {                    
             return false;
         }  
-    }
+    },
+    timer:function(){
+        let total= 0;
+        let min= 0;
+        let sec= 0;
+        var l1 = document.getElementById("timer");
+        let cont=setInterval(function(){
+            min = Math.floor(total / 60);
+            sec = total % 60;
+            if(min<10){ min="0"+min;}
+            if(sec<10){ sec="0"+sec;}
+            l1.innerHTML = min+":"+sec;
+            total++;
+        },1000);
+      }
 }
 export default game;
