@@ -117,11 +117,7 @@ playButton.addEventListener("click", ()=> {
         });
     }else{
         alert ("Debes elegir al menos un tipo de baraja y un nivel");
-<<<<<<< HEAD
     }       
-=======
-    }    
->>>>>>> 168b8efe54669b0b374bdfe3f71722d8be27ecd7
 });
 
 

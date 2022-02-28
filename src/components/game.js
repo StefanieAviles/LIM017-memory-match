@@ -1,29 +1,33 @@
 let selectCard1="";
 let selectCard2="";
+let active=true;
 
 const game = {
     clickCard: function(element){
-        element.classList.remove("flipBack");
-        if(selectCard1===""){
-            selectCard1=element;;
-            console.log("Card1: "+element.id);
-        }
-        else if(selectCard2===""){
-            setTimeout(() => {
-            selectCard2=element;
-            console.log("Card2: "+element.id);
-            if(this.constrastCard()===false){
-                
-                selectCard1.classList.add("flipBack");
-                selectCard2.classList.add("flipBack");
-                
+        if(active===true){
+            element.classList.remove("flipBack");
+            document.getElementById("root").disabled = true;
+            if(selectCard1===""){
+                selectCard1=element;;
             }
-        }, 1000);
-        }
-        else {
-            selectCard1=element;
-            selectCard2="";
-            console.log("Card1: "+element.id);
+            else if(selectCard2===""){ 
+                active=false;   
+                selectCard2=element;
+                if(this.constrastCard()===false){
+                    setTimeout(() => {
+                    selectCard1.classList.add("flipBack");
+                    selectCard2.classList.add("flipBack");
+                    active=true;
+                    }, 1000);  
+                }
+                else{
+                    active=true; 
+                }
+            }
+            else {
+                selectCard1=element;
+                selectCard2="";
+            }
         }
     },
 
