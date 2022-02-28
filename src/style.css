@@ -121,7 +121,6 @@ header{
     background-size: cover;      
     border-radius: 5rem;
     margin-top: 5rem;
-
 }
 ul{
     display: flex;
@@ -132,10 +131,8 @@ ul{
 }
 nav{
     display:flex;
-    justify-content:space-between;
-    
+    justify-content:space-between;    
 }
-
 h2{
     padding-top:40rem;
     margin-bottom:40rem;
@@ -221,6 +218,12 @@ button:hover{
 }
 .error_input{
     border-color: red;
+}
+.cardAudio{
+    src: url("audio/CardSound.mp3");  
+}
+.correctAudio{
+    src: url("audio/CorrectSound.mp3");
 }
 @media (max-width:800px) {
     html{

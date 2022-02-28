@@ -20,6 +20,7 @@ const updateButton = document.getElementById("Update");
 const exitButton = document.getElementById("Exit");
 
 const pattern = new RegExp("^[A-Za-z0-9]+$");
+const start_sound = new Audio("audio/StartSound.mp3");
 let array_cards = [];
 let numCard=0;
 
@@ -101,6 +102,7 @@ playButton.addEventListener("click", ()=> {
         }
         //Invocamos a APP
         array_cards=App(numCard,document.querySelector('input[name="card_selection"]:checked').id);
+        start_sound.play();
         array_cards.forEach(element => {
             document.getElementById("root").appendChild(element);
             element.addEventListener("click", function(){
@@ -112,11 +114,12 @@ playButton.addEventListener("click", ()=> {
                 element.remove();
             });
             array_cards=[];
-            array_cards=App(numCard);
+            array_cards=App(numCard,document.querySelector('input[name="card_selection"]:checked').id);
+            start_sound.play();
             array_cards.forEach(element => {
             document.getElementById("root").appendChild(element);
             element.addEventListener("click", function(){
-                game.clickCard(element);
+                game.clickCard(element,document.querySelector('input[name="card_selection"]:checked').id);
             });
         }); 
             
