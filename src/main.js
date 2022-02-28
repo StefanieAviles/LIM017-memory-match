@@ -103,6 +103,7 @@ playButton.addEventListener("click", ()=> {
         //Invocamos a APP
         array_cards=App(numCard,document.querySelector('input[name="card_selection"]:checked').id);
         start_sound.play();
+        game.timer();
         array_cards.forEach(element => {
             document.getElementById("root").appendChild(element);
             element.addEventListener("click", function(){
@@ -116,6 +117,7 @@ playButton.addEventListener("click", ()=> {
             array_cards=[];
             array_cards=App(numCard,document.querySelector('input[name="card_selection"]:checked').id);
             start_sound.play();
+            game.timer();
             array_cards.forEach(element => {
             document.getElementById("root").appendChild(element);
             element.addEventListener("click", function(){

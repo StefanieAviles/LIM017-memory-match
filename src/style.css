@@ -225,6 +225,16 @@ button:hover{
 .correctAudio{
     src: url("audio/CorrectSound.mp3");
 }
+
+.timer {
+    font-size:40px;
+    color:black;
+    width: 170rem;
+    height: 60rem;
+    margin-left:1%;
+    margin-top:0;
+  }
+
 @media (max-width:800px) {
     html{
         font-size:0.7px;
@@ -252,3 +262,5 @@ button:hover{
         height:50rem;
     }
 }
+
+
