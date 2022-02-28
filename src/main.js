@@ -101,35 +101,30 @@ playButton.addEventListener("click", ()=> {
             numCard=9;
         }
         //Invocamos a APP
-        array_cards=App(numCard,document.querySelector('input[name="card_selection"]:checked').id);
-        start_sound.play();
-        game.timer();
-        array_cards.forEach(element => {
-            document.getElementById("root").appendChild(element);
-            element.addEventListener("click", function(){
-                game.clickCard(element,document.querySelector('input[name="card_selection"]:checked').id);
-            });
-        }); 
+        startGame(numCard,document.querySelector('input[name="card_selection"]:checked').id);
         updateButton.addEventListener("click", ()=> {
             array_cards.forEach(element =>{
                 element.remove();
             });
             array_cards=[];
-            array_cards=App(numCard,document.querySelector('input[name="card_selection"]:checked').id);
-            start_sound.play();
-            game.timer();
-            array_cards.forEach(element => {
-            document.getElementById("root").appendChild(element);
-            element.addEventListener("click", function(){
-                game.clickCard(element,document.querySelector('input[name="card_selection"]:checked').id);
-            });
-        }); 
+            startGame(numCard,document.querySelector('input[name="card_selection"]:checked').id);
             
         });
     }else{
         alert ("Debes elegir al menos un tipo de baraja y un nivel");
     }       
 });
+function startGame(numCard,cardSelection){
+    array_cards=App(numCard,cardSelection);
+    start_sound.play();
+    game.timer(numCard);
+    array_cards.forEach(element => {
+        document.getElementById("root").appendChild(element);
+        element.addEventListener("click", function(){
+            game.clickCard(element,document.querySelector('input[name="card_selection"]:checked').id);
+        });
+    }); 
+}
 
 
 
