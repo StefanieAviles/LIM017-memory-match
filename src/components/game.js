@@ -3,6 +3,11 @@ let selectCard2="";
 let active=true;
 let card_audio=new Audio("audio/CardSound.mp3");
 let correct_audio=new Audio("audio/CorrectSound.mp3");
+let correctCard=0;
+let cont;
+let total=0;
+let min= 0;
+let sec=0;
 
 const game = {
     clickCard: function(element,card_selection){
@@ -33,6 +38,7 @@ const game = {
                 else{
                     
                     active=true;
+                    correctCard++;
                     correct_audio.play();
                     selectCard1.classList.add("showAnimation");
                     selectCard2.classList.add("showAnimation");
@@ -54,18 +60,25 @@ const game = {
             return false;
         }  
     },
-    timer:function(){
-        let total= 0;
-        let min= 0;
-        let sec= 0;
+    timer:function(numCard){
+        correctCard=0;
+        clearInterval(cont);
+        total= 0;
+        min= 0;
+        sec= 0;
         var l1 = document.getElementById("timer");
-        let cont=setInterval(function(){
-            min = Math.floor(total / 60);
-            sec = total % 60;
-            if(min<10){ min="0"+min;}
-            if(sec<10){ sec="0"+sec;}
-            l1.innerHTML = min+":"+sec;
-            total++;
+        cont=setInterval(function(){
+            if(correctCard===numCard){
+                clearInterval(cont); 
+                alert("Terminó el juego en "+min+":"+sec);}
+            else{
+                total++;
+                min = Math.floor(total / 60);
+                sec = total % 60;
+                if(min<10){ min="0"+min;}
+                if(sec<10){ sec="0"+sec;}
+                l1.innerHTML = min+":"+sec;
+            }
         },1000);
       }
 }
