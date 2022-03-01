@@ -15,7 +15,6 @@ const game = {
     clickCard: function(element,card_selection){
         if(active===true){
             let flipBack="";
-            ///////
             if(card_selection==="radio_pokemon"){
                 flipBack="flipBack1";
             }else{
@@ -34,13 +33,16 @@ const game = {
                     setTimeout(() => {            
                         selectCard1.classList.add(flipBack);
                         selectCard2.classList.add(flipBack);
+                        card_audio.play();
                         active=true;
                     }, 1000);
                 }
-                else{
+                else{                    
                     active=true;
                     correctCard++;
                     correct_audio.play();
+                    selectCard1.classList.add("showAnimation");
+                    selectCard2.classList.add("showAnimation");
                 }
             
             }
@@ -49,6 +51,15 @@ const game = {
                 selectCard2="";
             }
      }
+    },
+
+    constrastCard: function(){
+        if (selectCard1.id===selectCard2.id) {
+            return true;
+        }
+        else {                    
+            return false;
+        }  
     },
 
     constrastCard: function(){
@@ -70,13 +81,15 @@ const game = {
         cont=setInterval(function(){
             if(correctCard===numCard){
                 clearInterval(cont); 
-                alert("Terminó el juego en "+min+":"+sec);
+               
                 ranking.items.push({nickname:nickName, time:min+":"+sec,level:level,type:cardSelection});
                 let arr=ranking.items.filter(item => { return item.level == level && item.type==cardSelection; }).sort(function(a,b){
                     if (a.time > b.time) { return 1; }
                     if (a.time < b.time) { return -1; }
                     return 0;});
                 console.log(arr);
+               // console.log(arr.filter(item => {return item.}));
+                alert("Terminó el juego en "+min+":"+sec);
             }
             else{
                 total++;
