@@ -35,8 +35,7 @@ const game = {
                         active=true;
                     }, 1000);
                 }
-                else{
-                    
+                else{                    
                     active=true;
                     correctCard++;
                     correct_audio.play();
@@ -70,7 +69,8 @@ const game = {
         cont=setInterval(function(){
             if(correctCard===numCard){
                 clearInterval(cont); 
-                alert("Terminó el juego en "+min+":"+sec);}
+                alert("Terminó el juego en "+min+":"+sec);
+            }
             else{
                 total++;
                 min = Math.floor(total / 60);

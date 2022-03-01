@@ -6,12 +6,16 @@ const first_window = document.getElementById("first_window");
 const second_window = document.getElementById("second_window");
 const third_window = document.getElementById("third_window");
 const fourth_window = document.getElementById("fourth_window");
+const fifth_window = document.getElementById("fifth_window");
 
 const header_windows = document.getElementById("header");
 const label_error = document.getElementById("error_message");
 const show_nickname = document.getElementById("span_nickname");
 const input = document.getElementById("Nickname");
 const level = document.getElementById("level");
+const results_nickname = document.getElementById("nickname_result");
+const timer = document.getElementById("timer");
+const time_result = document.getElementById("time_result");
 
 const startButton = document.getElementById("Btn1");
 const continueButton = document.getElementById("Btn2");
@@ -19,15 +23,18 @@ const playButton = document.getElementById("Btn3");
 const updateButton = document.getElementById("Update");
 const exitButton = document.getElementById("Exit");
 
+
 const pattern = new RegExp("^[A-Za-z0-9]+$");
 const start_sound = new Audio("audio/StartSound.mp3");
 let array_cards = [];
 let numCard=0;
+let string_time = "vacio";
 
 //Damos funcionalidad al boton de la 1era ventana, para que la oculte y muestre la siguiente
 startButton.addEventListener("click", ()=> {
     second_window.classList.add("show");
     header_windows.classList.add("showheader");
+    timer.classList.add("hide");
     first_window.classList.add("hide");
 });
 //Damos funcionalidad al boton del header para salir y regresar al inicio
@@ -90,7 +97,8 @@ playButton.addEventListener("click", ()=> {
     if(validate_radio() && validate_select()) {
         third_window.classList.remove("show");
         header_windows.classList.add("showheader");
-        fourth_window.classList.add("show");
+        fourth_window.classList.add("show");   
+        timer.classList.remove("hide"); 
         //Para el nivel Facil se jugara con 6 cartas, Intermedio 12 cartas, y dificl 18 cartas
         if(level.value ==="1"){
             numCard=3;
@@ -99,22 +107,21 @@ playButton.addEventListener("click", ()=> {
         }
         else{
             numCard=9;
-        }
-        //Invocamos a APP
-        startGame(numCard,document.querySelector('input[name="card_selection"]:checked').id);
+        }        
+        startGame(numCard,document.querySelector('input[name="card_selection"]:checked').id);        
         updateButton.addEventListener("click", ()=> {
-            array_cards.forEach(element =>{
-                element.remove();
-            });
-            array_cards=[];
-            startGame(numCard,document.querySelector('input[name="card_selection"]:checked').id);
-            
+          array_cards.forEach(element =>{
+          element.remove();
+          });
+        array_cards=[];
+        startGame(numCard,document.querySelector('input[name="card_selection"]:checked').id);
         });
     }else{
         alert ("Debes elegir al menos un tipo de baraja y un nivel");
     }       
 });
 function startGame(numCard,cardSelection){
+    //Invocamos a APP
     array_cards=App(numCard,cardSelection);
     start_sound.play();
     game.timer(numCard);
