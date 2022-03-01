@@ -10,9 +10,13 @@ let cont;
 let total=0;
 let min= 0;
 let sec=0;
+let idPlayer='';
+let arrayRanking=[];
+let positionPlayer='';
 
 const game = {
     clickCard: function(element,card_selection){
+        element.classList.add('disable-div');
         if(active===true){
             let flipBack="";
             if(card_selection==="radio_pokemon"){
@@ -34,6 +38,8 @@ const game = {
                         selectCard1.classList.add(flipBack);
                         selectCard2.classList.add(flipBack);
                         card_audio.play();
+                        selectCard1.classList.remove("disable-div");
+                        selectCard2.classList.remove("disable-div");
                         active=true;
                     }, 1000);
                 }
@@ -81,15 +87,14 @@ const game = {
         cont=setInterval(function(){
             if(correctCard===numCard){
                 clearInterval(cont); 
-               
-                ranking.items.push({nickname:nickName, time:min+":"+sec,level:level,type:cardSelection});
-                let arr=ranking.items.filter(item => { return item.level == level && item.type==cardSelection; }).sort(function(a,b){
+                idPlayer=ranking.items.length+1;
+                ranking.items.push({id:idPlayer,nickname:nickName, time:min+":"+sec,level:level,type:cardSelection});
+                arrayRanking=ranking.items.filter(item => { return item.level == level && item.type==cardSelection; }).sort(function(a,b){
                     if (a.time > b.time) { return 1; }
                     if (a.time < b.time) { return -1; }
                     return 0;});
-                console.log(arr);
-               // console.log(arr.filter(item => {return item.}));
-                alert("Terminó el juego en "+min+":"+sec);
+                positionPlayer=arrayRanking.findIndex(item => {return item.id===idPlayer})+1;
+                alert("Terminó el juego en "+min+":"+sec+ " se encuentra en la posicion: "+positionPlayer);
             }
             else{
                 total++;
