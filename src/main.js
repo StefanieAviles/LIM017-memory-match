@@ -126,7 +126,7 @@ playButton.addEventListener("click", ()=> {
 function startGame(numCard,level,cardSelection){
     array_cards=App(numCard,cardSelection);
     start_sound.play();
-    console.log(game.timer(numCard,level,cardSelection,input.value));
+    game.timer(numCard,level,cardSelection,input.value);
     array_cards.forEach(element => {
         document.getElementById("root").appendChild(element);
         element.addEventListener("click", function(){
