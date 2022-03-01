@@ -1,3 +1,5 @@
+import ranking from '../data/ranking/ranking.js';
+
 let selectCard1="";
 let selectCard2="";
 let active=true;
@@ -59,7 +61,17 @@ const game = {
             return false;
         }  
     },
-    timer:function(numCard){
+
+    constrastCard: function(){
+        if (selectCard1.id===selectCard2.id) {
+            return true;
+        }
+        else {            
+            card_audio.play();
+            return false;
+        }  
+    },
+    timer:function(numCard,level,cardSelection,nickName){
         correctCard=0;
         clearInterval(cont);
         total= 0;
@@ -69,6 +81,14 @@ const game = {
         cont=setInterval(function(){
             if(correctCard===numCard){
                 clearInterval(cont); 
+               
+                ranking.items.push({nickname:nickName, time:min+":"+sec,level:level,type:cardSelection});
+                let arr=ranking.items.filter(item => { return item.level == level && item.type==cardSelection; }).sort(function(a,b){
+                    if (a.time > b.time) { return 1; }
+                    if (a.time < b.time) { return -1; }
+                    return 0;});
+                console.log(arr);
+               // console.log(arr.filter(item => {return item.}));
                 alert("Terminó el juego en "+min+":"+sec);
             }
             else{
