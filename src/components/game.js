@@ -10,6 +10,7 @@ let cont;
 let total=0;
 let min= 0;
 let sec=0;
+const l1 = document.getElementById("timer");
 
 const game = {
     clickCard: function(element,card_selection){
@@ -77,11 +78,9 @@ const game = {
         total= 0;
         min= 0;
         sec= 0;
-        var l1 = document.getElementById("timer");
         cont=setInterval(function(){
             if(correctCard===numCard){
-                clearInterval(cont); 
-               
+                clearInterval(cont);                
                 ranking.items.push({nickname:nickName, time:min+":"+sec,level:level,type:cardSelection});
                 let arr=ranking.items.filter(item => { return item.level == level && item.type==cardSelection; }).sort(function(a,b){
                     if (a.time > b.time) { return 1; }
@@ -90,6 +89,8 @@ const game = {
                 console.log(arr);
                // console.log(arr.filter(item => {return item.}));
                 alert("Terminó el juego en "+min+":"+sec);
+                l1.setAttribute("value", min+":"+sec);
+                l1.setAttribute("finish","true");
             }
             else{
                 total++;
@@ -100,6 +101,6 @@ const game = {
                 l1.innerHTML = min+":"+sec;
             }
         },1000);
-      }
+      },
 }
 export default game;

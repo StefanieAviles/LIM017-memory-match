@@ -110,6 +110,7 @@ playButton.addEventListener("click", ()=> {
         }
         //Invocamos a APP
         startGame(numCard,level.value,document.querySelector('input[name="card_selection"]:checked').id);
+         
         updateButton.addEventListener("click", ()=> {
             array_cards.forEach(element =>{
                 element.remove();
@@ -120,20 +121,25 @@ playButton.addEventListener("click", ()=> {
         });
     }else{
         alert ("Debes elegir al menos un tipo de baraja y un nivel");
-    }       
+    }    
+      
 });
 
 function startGame(numCard,level,cardSelection){
     array_cards=App(numCard,cardSelection);
     start_sound.play();
-    console.log(game.timer(numCard,level,cardSelection,input.value));
+    game.timer(numCard,level,cardSelection,input.value);
     array_cards.forEach(element => {
         document.getElementById("root").appendChild(element);
         element.addEventListener("click", function(){
             game.clickCard(element,document.querySelector('input[name="card_selection"]:checked').id);
         });
     }); 
+    
 }
+
+
+
 
 
 
