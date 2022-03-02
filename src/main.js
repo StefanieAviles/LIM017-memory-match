@@ -37,7 +37,6 @@ let array_cards = [];
 let array_top = [];
 let numCard=0;
 let result=[];
-let string_time = "vacio";
 
 //timer
 let cont;
@@ -54,7 +53,6 @@ startButton.addEventListener("click", ()=> {
 exitButton.addEventListener("click", ()=> {
     input.value = "";
     level.value = 0;
-    document.querySelector('input[name="card_selection"]:checked').id='';
     array_cards.forEach(element =>{
         element.remove();
     });
