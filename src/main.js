@@ -50,7 +50,14 @@ startButton.addEventListener("click", ()=> {
 });
 //Damos funcionalidad al boton del header para salir y regresar al inicio
 exitButton.addEventListener("click", ()=> {
-    window.location.reload(); 
+    input.value = "";
+    level.value = 0;
+    document.querySelector('input[name="card_selection"]:checked').id='';
+    array_cards.forEach(element =>{
+        element.remove();
+    });
+    array_cards=[];
+    navigation(1);
 });
 //Funcion que verifica si el nickname ingresado es valido
 function isValid(sentence) {
@@ -188,10 +195,16 @@ play_againButton.addEventListener("click",()=>{
     });
     array_cards=[];
     navigation(2);
-    fifth_window.classList.remove("show");
+    
 });
 start_againButton.addEventListener("click",()=> {
-    window.location.reload();
+    input.value = "";
+    level.value = 0;
+    array_cards.forEach(element =>{
+        element.remove();
+    });
+    array_cards=[];
+    navigation(2);
 });
 
 const navigation = position =>{
@@ -203,6 +216,7 @@ const navigation = position =>{
             third_window.classList.remove("show");
             fourth_window.classList.remove("show");  
             fifth_window.classList.remove("show");
+            sixth_window.classList.remove("show");
             timer.classList.add("hide");
             
             break;
@@ -212,6 +226,8 @@ const navigation = position =>{
             header_windows.classList.add("showheader");
             timer.classList.add("hide");
             first_window.classList.add("hide");
+            fifth_window.classList.remove("show");
+            sixth_window.classList.remove("show");
             break;
 
         case 3:

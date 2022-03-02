@@ -229,6 +229,10 @@ button:hover{
     animation: waves 2s linear 0.1s;
 }
 
+.disable-div {
+    pointer-events: none;
+}
+
 .top{
     display: block;
     width: 100%;

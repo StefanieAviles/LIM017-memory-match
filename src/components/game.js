@@ -15,6 +15,7 @@ let positionPlayer='';
 const game = {
     clickCard: function(element,card_selection){        
         if(active===true){
+            console.log("jugando");
             element.classList.add('disable-div');
             let flipBack="";
             if(card_selection==="radio_pokemon"){
