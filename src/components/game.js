@@ -75,6 +75,7 @@ const game = {
         correctCard=0; 
         selectCard1="";
         selectCard2="";
+        return true;
     },
 
     endGame: function(level,cardSelection,nickName,min,sec){
@@ -86,17 +87,19 @@ const game = {
             return 0;});
         positionPlayer=arrayRanking.findIndex(item => {return item.id===idPlayer})+1;
         return {'nickname':nickName,'time':min+':'+sec,'position':positionPlayer};
-        },
+    },
     
     topRanking: function(){
         arrayTopHTML=[];
-        for (let index = 0; index < 5; index++) {
-            const el = document.createElement('span');
-            el.classList.add('top');
-            el.innerHTML = (index+1)+' : '+arrayRanking[index].nickname+' => '+arrayRanking[index].time+'<br><br>';
-            arrayTopHTML.push(el);
-          }
-          return arrayTopHTML;
+        if(!arrayRanking){
+            for (let index = 0; index < 5; index++) {
+                const el = document.createElement('span');
+                el.classList.add('top');
+                el.innerHTML = (index+1)+' : '+arrayRanking[index].nickname+' => '+arrayRanking[index].time+'<br><br>';
+                arrayTopHTML.push(el);
+            } 
         }
+        return arrayTopHTML;
+    }
 }
 export default game;
