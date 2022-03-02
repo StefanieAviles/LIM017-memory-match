@@ -89,7 +89,7 @@ continueButton.addEventListener("click", ()=> {
 });
 //Funcion que valida si al menos se ha elegido un tipo de baraja
 function validate_radio(){
-    if(!document.querySelector('input[name="card_selection"]:checked')){
+    if(!document.querySelector('input[name="card_selection"]:checked')){        
         return false;
     }else{
         return true;
