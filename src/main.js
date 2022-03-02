@@ -7,35 +7,45 @@ const second_window = document.getElementById("second_window");
 const third_window = document.getElementById("third_window");
 const fourth_window = document.getElementById("fourth_window");
 const fifth_window = document.getElementById("fifth_window");
+const sixth_window = document.getElementById("sixth_window");
 
 const header_windows = document.getElementById("header");
 const label_error = document.getElementById("error_message");
 const show_nickname = document.getElementById("span_nickname");
 const input = document.getElementById("Nickname");
 const level = document.getElementById("level");
-const results_nickname = document.getElementById("nickname_result");
 const timer = document.getElementById("timer");
-const time_result = document.getElementById("time_result");
+const results_nickname = document.getElementById("nickname_result");
+const result_time = document.getElementById("time_result");
+const result_position = document.getElementById("position");
 
 const startButton = document.getElementById("Btn1");
 const continueButton = document.getElementById("Btn2");
 const playButton = document.getElementById("Btn3");
 const updateButton = document.getElementById("Update");
 const exitButton = document.getElementById("Exit");
+const top5Button = document.getElementById("top_5");
+const play_againButton = document.getElementById("start_again");
+const start_againButton = document.getElementById("finish");
 
 
 const pattern = new RegExp("^[A-Za-z0-9]+$");
 const start_sound = new Audio("audio/StartSound.mp3");
 let array_cards = [];
 let numCard=0;
+let result=[];
 let string_time = "vacio";
+
+//timer
+let cont;
+let total=0;
+let min= 0;
+let sec=0;
+let correctCard;
 
 //Damos funcionalidad al boton de la 1era ventana, para que la oculte y muestre la siguiente
 startButton.addEventListener("click", ()=> {
-    second_window.classList.add("show");
-    header_windows.classList.add("showheader");
-    timer.classList.add("hide");
-    first_window.classList.add("hide");
+   navigation(2);
 });
 //Damos funcionalidad al boton del header para salir y regresar al inicio
 exitButton.addEventListener("click", ()=> {
@@ -64,10 +74,7 @@ function isValid(sentence) {
 continueButton.addEventListener("click", ()=> {
     //Si el nickname es valido, me muestra la siguiente ventana
     if (isValid(input.value)) {
-        second_window.classList.remove("show");
-        header_windows.classList.add("showheader");
-        show_nickname.innerText=input.value + "!!!";
-        third_window.classList.add("show");
+        navigation(3);
     //Caso contrario pinta la casilla de rojo y muestra mensaje de error  
     } else {
       input.classList.add("error_input");
@@ -95,10 +102,7 @@ playButton.addEventListener("click", ()=> {
 
     //Si al menos eligio una baraja y un nivel muestra la siguiente pantalla   
     if(validate_radio() && validate_select()) {
-        third_window.classList.remove("show");
-        header_windows.classList.add("showheader");
-        fourth_window.classList.add("show");   
-        timer.classList.remove("hide"); 
+        navigation(4);
         //Para el nivel Facil se jugara con 6 cartas, Intermedio 12 cartas, y dificl 18 cartas
         if(level.value ==="1"){
             numCard=3;
@@ -111,13 +115,15 @@ playButton.addEventListener("click", ()=> {
         //Invocamos a APP
         startGame(numCard,level.value,document.querySelector('input[name="card_selection"]:checked').id);
          
+
+        //Funcionalidad para volver a jugar
         updateButton.addEventListener("click", ()=> {
+            navigation(4);
             array_cards.forEach(element =>{
                 element.remove();
             });
             array_cards=[];
             startGame(numCard,level.value,document.querySelector('input[name="card_selection"]:checked').id);
-            
         });
     }else{
         alert ("Debes elegir al menos un tipo de baraja y un nivel");
@@ -125,10 +131,11 @@ playButton.addEventListener("click", ()=> {
       
 });
 
-function startGame(numCard,level,cardSelection){
+const startGame = (numCard,level,cardSelection) => {
     array_cards=App(numCard,cardSelection);
     start_sound.play();
-    game.timer(numCard,level,cardSelection,input.value);
+    correctCard=game.cleanGame();
+    startTimer(numCard,level,cardSelection,input.value);
     array_cards.forEach(element => {
         document.getElementById("root").appendChild(element);
         element.addEventListener("click", function(){
@@ -136,6 +143,102 @@ function startGame(numCard,level,cardSelection){
         });
     }); 
     
+}
+
+const startTimer = (numCard,level,cardSelection,nickName) => {
+    clearInterval(cont);
+    total= 0;
+    min= 0;
+    sec= 0;
+    cont=setInterval(function(){
+        correctCard=game.correctCard();
+        if(correctCard===numCard){
+            clearInterval(cont); 
+            result=game.endGame(level,cardSelection,nickName,min,sec);
+            console.log(result);
+            results_nickname.innerText=result.nickname;
+            result_time.innerText=result.time;
+            //result_position.innerText=result.position;
+            navigation(5);
+        }
+        else{
+            total++;
+            min = Math.floor(total / 60);
+            sec = total % 60;
+            if(min<10){ min="0"+min;}
+            if(sec<10){ sec="0"+sec;}
+            timer.innerHTML = min+":"+sec;
+        }
+        return "1";
+    },1000);
+}
+/*top5Button.addEventListener("click",()=> {
+    navigation(6);
+
+});*/
+play_againButton.addEventListener("click",()=>{
+    input.value = "";
+    level.value = 0;
+    array_cards.forEach(element =>{
+        element.remove();
+    });
+    array_cards=[];
+    navigation(2);
+    fifth_window.classList.remove("show");
+});
+start_againButton.addEventListener("click",()=> {
+    window.location.reload();
+});
+
+const navigation = position =>{
+    switch (position) {
+        case 1:
+            first_window.classList.remove("hide");
+            second_window.classList.remove("show");
+            header_windows.classList.remove("showheader");
+            third_window.classList.remove("show");
+            fourth_window.classList.remove("show");  
+            fifth_window.classList.remove("show");
+            timer.classList.add("hide");
+            
+            break;
+
+        case 2:
+            second_window.classList.add("show");
+            header_windows.classList.add("showheader");
+            timer.classList.add("hide");
+            first_window.classList.add("hide");
+            break;
+
+        case 3:
+            second_window.classList.remove("show");
+            header_windows.classList.add("showheader");
+            show_nickname.innerText=input.value + "!!!";
+            third_window.classList.add("show");
+            break;
+
+        case 4:
+            third_window.classList.remove("show");
+            header_windows.classList.add("showheader");
+            fourth_window.classList.add("show");   
+            timer.classList.remove("hide"); 
+            break; 
+
+        case 5:
+            fourth_window.classList.remove("show");
+            fifth_window.classList.add("show");
+            timer.classList.add("hide");                     
+            break;
+
+        case 6:
+            sixth_window.classList.add("show");
+            fifth_window.classList.remove("show");
+            
+            break;
+
+        default:
+            break;
+    }
 }
 
 

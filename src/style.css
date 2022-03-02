@@ -108,6 +108,10 @@ header{
     margin-left:1%;
     margin-top:0;
 }
+#claps_image{
+    width:150rem;
+    height:150rem;
+}
 .nav_buttons{
     background-position: center;
     background-repeat: no-repeat;
@@ -159,7 +163,6 @@ h3{
     display: block;
     pointer-events: auto;
 }
-
 .hide{
     display: none;
     pointer-events: none;
