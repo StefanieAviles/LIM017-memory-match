@@ -6,7 +6,6 @@ let active=true;
 let card_audio=new Audio("audio/CardSound.mp3");
 let correct_audio=new Audio("audio/CorrectSound.mp3");
 let correctCard=0;
-const l1 = document.getElementById("timer");
 let idPlayer='';
 let arrayRanking=[];
 let arrayTopHTML=[];
@@ -69,9 +68,6 @@ const game = {
         if (bool===false) {
             correctCard=0;
         }
-        return correctCard; 
-    },
-    resultPlayer: function(bool){
         return correctCard; 
     },
 
