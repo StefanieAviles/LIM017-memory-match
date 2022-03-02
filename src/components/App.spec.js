@@ -9,11 +9,11 @@ describe('App', () => {
 
 });
 
-describe('Game', () => {
-  it('should render without crashing', () => {
-    const el = App();
-    expect(el instanceof Array).toBe(true);
+describe('game', () => {
+  it('should be an object', () => {
+    expect(typeof game).toBe('object');
   });
+
   //clickCard: function(element,card_selection)
   describe('game.clickCard', ()=>{
     it('should be a function', ()=>{
@@ -31,7 +31,7 @@ describe('Game', () => {
     it('should be a function', ()=>{
       expect(typeof game.constrastCard).toBe('function');
     });
-   /* it('should return "true" for , () => {
+  /* it('should return "true" for , () => {
       expect(game.constrastCard().toBe("true");
     }); */ 
   });
@@ -49,5 +49,31 @@ describe('Game', () => {
     /*it('should return 0 for "false"', () => {
       expect(game.correctCard("false")).toBe(0);
     }); */
+  });
+  describe('game.cleanGame', () => {
+    it('should be a function', () => {
+      expect(typeof game.cleanGame).toBe('function');
+    });
+    it('should return True if clean game', () => {
+      expect(game.cleanGame()).toBe(true);
+    });
+  });
+
+  describe('game.endGame', () => {
+    it('should be a function', () => {
+      expect(typeof game.endGame).toBe('function');
+    });
+    it('should return Array Objects', () => {
+      expect(typeof game.endGame()).toBe('object');
+    });
+  });
+
+  describe('game.topRanking', () => {
+    it('should be a function', () => {
+      expect(typeof game.topRanking).toBe('function');
+    });
+    it('should return Array Html', () => {
+      expect(typeof game.topRanking()).toBe('object');
+    });
   });
 });
