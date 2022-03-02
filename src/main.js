@@ -27,8 +27,6 @@ const exitButton = document.getElementById("Exit");
 const top5Button = document.getElementById("top_5");
 const play_againButton = document.getElementById("start_again");
 const start_againButton = document.getElementById("finish");
-const radio_pokemon = document.getElementById("radio_pokemon");
-const radio_web = document.getElementById("radio_web");
 
 
 const pattern = new RegExp("^[A-Za-z0-9]+$");

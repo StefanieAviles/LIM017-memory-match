@@ -12,7 +12,10 @@ let arrayTopHTML=[];
 let positionPlayer='';
 
 const game = {
-    clickCard: function(element,card_selection){        
+    clickCard: function(element,card_selection){ 
+        if(!element || !card_selection || typeof element != "object" || typeof card_selection != "string") {
+            throw new TypeError("Parametros incorrectos");
+        }  
         if(active===true){
             element.classList.add('disable-div');
             let flipBack="";
@@ -65,6 +68,9 @@ const game = {
     },
 
     correctCard: function(bool){
+        if(!bool || typeof bool !== "boolean") {
+            throw new TypeError("Parametros incorrectos");
+        } 
         if (bool===false) {
             correctCard=0;
         }
