@@ -32,6 +32,7 @@ const start_againButton = document.getElementById("finish");
 const pattern = new RegExp("^[A-Za-z0-9]+$");
 const start_sound = new Audio("audio/StartSound.mp3");
 let array_cards = [];
+let array_top = [];
 let numCard=0;
 let result=[];
 let string_time = "vacio";
@@ -49,7 +50,14 @@ startButton.addEventListener("click", ()=> {
 });
 //Damos funcionalidad al boton del header para salir y regresar al inicio
 exitButton.addEventListener("click", ()=> {
-    window.location.reload(); 
+    input.value = "";
+    level.value = 0;
+    document.querySelector('input[name="card_selection"]:checked').id='';
+    array_cards.forEach(element =>{
+        element.remove();
+    });
+    array_cards=[];
+    navigation(1);
 });
 //Funcion que verifica si el nickname ingresado es valido
 function isValid(sentence) {
@@ -155,10 +163,9 @@ const startTimer = (numCard,level,cardSelection,nickName) => {
         if(correctCard===numCard){
             clearInterval(cont); 
             result=game.endGame(level,cardSelection,nickName,min,sec);
-            console.log(result);
             results_nickname.innerText=result.nickname;
             result_time.innerText=result.time;
-            //result_position.innerText=result.position;
+            result_position.innerText=result.position;
             navigation(5);
         }
         else{
@@ -172,10 +179,18 @@ const startTimer = (numCard,level,cardSelection,nickName) => {
         return "1";
     },1000);
 }
-/*top5Button.addEventListener("click",()=> {
+top5Button.addEventListener("click",()=> {
+    array_top.forEach(element =>{
+        element.remove();
+    });
+    array_top=[];
+    array_top=game.topRanking();
+    array_top.forEach(element => {
+        document.getElementById("top").appendChild(element);
+    }); 
     navigation(6);
 
-});*/
+});
 play_againButton.addEventListener("click",()=>{
     input.value = "";
     level.value = 0;
@@ -184,10 +199,16 @@ play_againButton.addEventListener("click",()=>{
     });
     array_cards=[];
     navigation(2);
-    fifth_window.classList.remove("show");
+    
 });
 start_againButton.addEventListener("click",()=> {
-    window.location.reload();
+    input.value = "";
+    level.value = 0;
+    array_cards.forEach(element =>{
+        element.remove();
+    });
+    array_cards=[];
+    navigation(2);
 });
 
 const navigation = position =>{
@@ -199,6 +220,7 @@ const navigation = position =>{
             third_window.classList.remove("show");
             fourth_window.classList.remove("show");  
             fifth_window.classList.remove("show");
+            sixth_window.classList.remove("show");
             timer.classList.add("hide");
             
             break;
@@ -208,6 +230,8 @@ const navigation = position =>{
             header_windows.classList.add("showheader");
             timer.classList.add("hide");
             first_window.classList.add("hide");
+            fifth_window.classList.remove("show");
+            sixth_window.classList.remove("show");
             break;
 
         case 3:

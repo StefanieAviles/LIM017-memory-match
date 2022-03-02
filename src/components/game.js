@@ -9,7 +9,7 @@ let correctCard=0;
 const l1 = document.getElementById("timer");
 let idPlayer='';
 let arrayRanking=[];
-let arr;
+let arrayTopHTML=[];
 let positionPlayer='';
 
 const game = {
@@ -84,12 +84,23 @@ const game = {
     endGame: function(level,cardSelection,nickName,min,sec){
         idPlayer=ranking.items.length+1;
         ranking.items.push({id:idPlayer,nickname:nickName, time:min+":"+sec,level:level,type:cardSelection});
-        arrayRanking=arr=ranking.items.filter(item => { return item.level == level && item.type==cardSelection; }).sort(function(a,b){
+        arrayRanking=ranking.items.filter(item => { return item.level == level && item.type==cardSelection; }).sort(function(a,b){
             if (a.time > b.time) { return 1; }
             if (a.time < b.time) { return -1; }
             return 0;});
         positionPlayer=arrayRanking.findIndex(item => {return item.id===idPlayer})+1;
         return {'nickname':nickName,'time':min+':'+sec,'position':positionPlayer};
+        },
+    
+    topRanking: function(){
+        arrayTopHTML=[];
+        for (let index = 0; index < 5; index++) {
+            const el = document.createElement('span');
+            el.classList.add('top');
+            el.innerHTML = (index+1)+' : '+arrayRanking[index].nickname+' => '+arrayRanking[index].time+'<br><br>';
+            arrayTopHTML.push(el);
+          }
+          return arrayTopHTML;
         }
 }
 export default game;

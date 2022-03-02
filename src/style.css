@@ -228,6 +228,16 @@ button:hover{
 .showAnimation{
     animation: waves 2s linear 0.1s;
 }
+
+.disable-div {
+    pointer-events: none;
+}
+
+.top{
+    display: block;
+    width: 100%;
+}
+
 @keyframes waves{
     0%{
         box-shadow: 0 0 0 0 rgba(174, 231, 67,0.6),0 0 0 0 rgba(174, 231, 67,0.6);
