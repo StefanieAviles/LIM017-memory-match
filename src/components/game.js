@@ -15,7 +15,6 @@ let positionPlayer='';
 const game = {
     clickCard: function(element,card_selection){        
         if(active===true){
-            console.log("jugando");
             element.classList.add('disable-div');
             let flipBack="";
             if(card_selection==="radio_pokemon"){
@@ -94,13 +93,13 @@ const game = {
         },
     
     topRanking: function(){
+        arrayTopHTML=[];
         for (let index = 0; index < 5; index++) {
             const el = document.createElement('span');
             el.classList.add('top');
             el.innerHTML = (index+1)+' : '+arrayRanking[index].nickname+' => '+arrayRanking[index].time+'<br><br>';
             arrayTopHTML.push(el);
           }
-          console.log(arrayTopHTML)
           return arrayTopHTML;
         }
 }

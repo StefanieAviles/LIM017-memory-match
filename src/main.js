@@ -180,6 +180,10 @@ const startTimer = (numCard,level,cardSelection,nickName) => {
     },1000);
 }
 top5Button.addEventListener("click",()=> {
+    array_top.forEach(element =>{
+        element.remove();
+    });
+    array_top=[];
     array_top=game.topRanking();
     array_top.forEach(element => {
         document.getElementById("top").appendChild(element);
