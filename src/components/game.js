@@ -12,7 +12,7 @@ let arrayTopHTML=[];
 let positionPlayer='';
 
 const game = {
-    clickCard: function(element,card_selection){ 
+    clickCard: function(element,card_selection){
         if(!element || !card_selection || typeof element != "object" || typeof card_selection != "string") {
             throw new TypeError("Parametros incorrectos");
         }  
@@ -33,7 +33,7 @@ const game = {
                 active=false;  
                 selectCard2=element;
                 
-                if(this.constrastCard()===false){   
+                if(this.constrastCard(selectCard1.id,selectCard2.id)===false){   
                     setTimeout(() => {            
                         selectCard1.classList.add(flipBack);
                         selectCard2.classList.add(flipBack);
@@ -56,10 +56,14 @@ const game = {
                 selectCard2="";
             }
          }
+         return correctCard;
     },
 
-    constrastCard: function(){
-        if (selectCard1.id===selectCard2.id) {
+    constrastCard: function(card1,card2){
+        if(!card1 || !card2 || typeof card1 != "string" || typeof card2 != "string") {
+            throw new TypeError("Parametros incorrectos");
+        }  
+        if (card1===card2) {
             return true;
         }
         else {                    
@@ -67,14 +71,17 @@ const game = {
         }  
     },
 
-    correctCard: function(bool){
-        if(!bool || typeof bool !== "boolean") {
+    correctCard: function(numCard,corrects){
+       if(!numCard || typeof numCard != "number") {
             throw new TypeError("Parametros incorrectos");
-        } 
-        if (bool===false) {
-            correctCard=0;
         }
-        return correctCard; 
+        if (numCard===corrects) {
+            return true;
+        }
+        else{
+            return false;
+        }
+         
     },
 
     cleanGame: function(){

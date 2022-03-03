@@ -35,13 +35,12 @@ let array_cards = [];
 let array_top = [];
 let numCard=0;
 let result=[];
-
+let correctCards;
 //timer
 let cont;
 let total=0;
 let min= 0;
 let sec=0;
-let correctCard;
 
 //Damos funcionalidad al boton de la 1era ventana, para que la oculte y muestre la siguiente
 startButton.addEventListener("click", ()=> {
@@ -140,12 +139,12 @@ playButton.addEventListener("click", ()=> {
 const startGame = (numCard,level,cardSelection) => {
     array_cards=App(numCard,cardSelection);
     start_sound.play();
-    correctCard=game.cleanGame();
+    game.cleanGame();
     startTimer(numCard,level,cardSelection,input.value);
     array_cards.forEach(element => {
         document.getElementById("root").appendChild(element);
         element.addEventListener("click", function(){
-            game.clickCard(element,document.querySelector('input[name="card_selection"]:checked').id);
+            correctCards=game.clickCard(element,document.querySelector('input[name="card_selection"]:checked').id);
         });
     }); 
     
@@ -157,8 +156,7 @@ const startTimer = (numCard,level,cardSelection,nickName) => {
     min= 0;
     sec= 0;
     cont=setInterval(function(){
-        correctCard=game.correctCard();
-        if(correctCard===numCard){
+        if(game.correctCard(numCard,correctCards)){
             clearInterval(cont); 
             result=game.endGame(level,cardSelection,nickName,min,sec);
             results_nickname.innerText=result.nickname;

@@ -1,12 +1,26 @@
 import App from './App.js';
 import game from './game.js';
+import pokemon from '../data/pokemon/pokemon.js';
+import webdev from '../data/webdev/webdev.js';
 
 describe('App', () => {
   it('should render without crashing', () => {
     const el = App();
     expect(el instanceof Array).toBe(true);
   });
-
+  //return Math.random() - 0.5 
+  it('should return a number', () => {
+    expect(typeof(Math.random() - 0.5)).toBe("number");
+  });
+  //arrayData=pokemon.items.sort(function() {return Math.random() - 0.5 });
+  it('should return an array', () => {
+    expect(typeof(pokemon.items.sort(function() {return Math.random() - 0.5 }))).toBe("object");
+  });
+  //arrayData=webdev.items.sort(function() {return Math.random() - 0.5 });
+  it('should return an array', () => {
+    expect(typeof(webdev.items.sort(function() {return Math.random() - 0.5 }))).toBe("object");
+  });
+ 
 });
 
 describe('game', () => {
@@ -26,16 +40,28 @@ describe('game', () => {
       expect(() => game.clickCard(0, 0)).toThrow(TypeError);
     });   
   });
-  //constrastCard: function()
+  //constrastCard: function(selectCard1,selectCard2)
   describe('game.constrastCard', ()=>{
     it('should be a function', ()=>{
       expect(typeof game.constrastCard).toBe('function');
     });
-  /* it('should return "true" for , () => {
-      expect(game.constrastCard().toBe("true");
-    }); */ 
+    it('should throw TypeError when invoked with wrong argument types', () => {
+      expect(() => game.constrastCard()).toThrow(TypeError);
+      expect(() => game.constrastCard(0)).toThrow(TypeError);
+      expect(() => game.constrastCard(null, [])).toThrow(TypeError);
+      expect(() => game.constrastCard(0, 0)).toThrow(TypeError);
+    });   
+    it('should return true for card1="bulbasaur" with card2="bulbasaur"', () => {
+      expect(game.constrastCard("bulbasaur","bulbasaur")).toBe(true);
+    });
+    it('should return false for card1="ivysaur" with card2="bulbasaur"', () => {
+      expect(game.constrastCard("ivysaur","bulbasaur")).toBe(false);
+    });
+    it('should return false for card1="charmander" with card2="charizard"', () => {
+      expect(game.constrastCard("charmander","charizard")).toBe(false);
+    });
   });
-  //correctCard: function(bool)
+  // correctCard: function(numCard)
   describe('game.correctCard', ()=>{
     it('should be a function', ()=>{
       expect(typeof game.correctCard).toBe('function');
@@ -46,9 +72,12 @@ describe('game', () => {
       expect(() => game.correctCard(null)).toThrow(TypeError);
       expect(() => game.correctCard([])).toThrow(TypeError);
     });
-    /*it('should return 0 for "false"', () => {
-      expect(game.correctCard("false")).toBe(0);
-    }); */
+    it('should return true for 1', () => {
+      expect(game.correctCard(1,1)).toBe(true);
+    });
+    it('should return false for card1= 2 with card2=1 ', () => {
+      expect(game.correctCard(2,1)).toBe(false);
+    });
   });
   describe('game.cleanGame', () => {
     it('should be a function', () => {
