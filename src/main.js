@@ -18,6 +18,8 @@ const timer = document.getElementById("timer");
 const results_nickname = document.getElementById("nickname_result");
 const result_time = document.getElementById("time_result");
 const result_position = document.getElementById("position");
+const cards_table = document.getElementById("root");
+const player = document.getElementById("player");
 
 const startButton = document.getElementById("Btn1");
 const continueButton = document.getElementById("Btn2");
@@ -49,6 +51,7 @@ startButton.addEventListener("click", ()=> {
 //Damos funcionalidad al boton del header para salir y regresar al inicio
 exitButton.addEventListener("click", ()=> {
     input.value = "";
+    player.innerText="";
     level.value = 0;
     array_cards.forEach(element =>{
         element.remove();
@@ -111,11 +114,14 @@ playButton.addEventListener("click", ()=> {
         //Para el nivel Facil se jugara con 6 cartas, Intermedio 12 cartas, y dificl 18 cartas
         if(level.value ==="1"){
             numCard=3;
+            cards_table.classList.add("styleRoot1");
         }else if(level.value ==="2"){
             numCard=6;
+            cards_table.classList.add("styleRoot2");
         }
         else{
-            numCard=9;
+            numCard=12;
+            cards_table.classList.add("styleRoot3");
         }
         //Invocamos a APP
         startGame(numCard,level.value,document.querySelector('input[name="card_selection"]:checked').id);
@@ -142,7 +148,7 @@ const startGame = (numCard,level,cardSelection) => {
     game.cleanGame();
     startTimer(numCard,level,cardSelection,input.value);
     array_cards.forEach(element => {
-        document.getElementById("root").appendChild(element);
+        cards_table.appendChild(element);
         element.addEventListener("click", function(){
             correctCards=game.clickCard(element,document.querySelector('input[name="card_selection"]:checked').id);
         });
@@ -183,28 +189,36 @@ top5Button.addEventListener("click",()=> {
     array_top=game.topRanking();
     array_top.forEach(element => {
         document.getElementById("top").appendChild(element);
-    }); 
+    });
     navigation(6);
 
 });
 play_againButton.addEventListener("click",()=>{
-    input.value = "";
     level.value = 0;
     array_cards.forEach(element =>{
         element.remove();
     });
     array_cards=[];
-    navigation(2);
+    array_top.forEach(element =>{
+        element.remove();
+    });
+    array_top=[];
+    correctCards=0;
+    navigation(3);
     
 });
 start_againButton.addEventListener("click",()=> {
-    input.value = "";
     level.value = 0;
     array_cards.forEach(element =>{
         element.remove();
     });
     array_cards=[];
-    navigation(2);
+    array_top.forEach(element =>{
+        element.remove();
+    });
+    array_top=[];
+    correctCards=0;
+    navigation(3);
 });
 
 const navigation = position =>{
@@ -224,6 +238,7 @@ const navigation = position =>{
         case 2:
             second_window.classList.add("show");
             header_windows.classList.add("showheader");
+            updateButton.classList.add("hideUpdate");
             timer.classList.add("hide");
             first_window.classList.add("hide");
             fifth_window.classList.remove("show");
@@ -240,12 +255,15 @@ const navigation = position =>{
         case 4:
             third_window.classList.remove("show");
             header_windows.classList.add("showheader");
+            updateButton.classList.remove("hideUpdate");
             fourth_window.classList.add("show");   
+            player.innerText= "Jugador: "+input.value;
             timer.classList.remove("hide"); 
             break; 
 
         case 5:
             fourth_window.classList.remove("show");
+            updateButton.classList.add("hideUpdate");
             fifth_window.classList.add("show");
             timer.classList.add("hide");                     
             break;

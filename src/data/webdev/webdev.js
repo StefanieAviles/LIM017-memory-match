@@ -11,5 +11,8 @@ export default {
     { id: 'react', image: 'https://simpleicons.org/icons/react.svg', bgColor: '#61DAFB' },
     { id: 'angular', image: 'https://simpleicons.org/icons/angular.svg', bgColor: '#DD0031' },
     { id: 'vue', image: 'https://simpleicons.org/icons/codesandbox.svg', bgColor: '#4FC08D' },
+    { id: 'eslint', image: 'https://simpleicons.org/icons/eslint.svg', bgColor: '#55FF33' },
+    { id: 'visual', image: 'https://simpleicons.org/icons/visualstudiocode.svg', bgColor: '#FF33A8' },
+    
   ],
 };

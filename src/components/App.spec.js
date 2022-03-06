@@ -16,6 +16,9 @@ describe('App', () => {
   it('should return an array', () => {
     expect(typeof(pokemon.items.sort(function() {return Math.random() - 0.5 }))).toBe("object");
   });
+  it('should return an object', ()=>{
+    expect(typeof(document.createElement('div'))).toBe("object");
+  });
   //arrayData=webdev.items.sort(function() {return Math.random() - 0.5 });
   it('should return an array', () => {
     expect(typeof(webdev.items.sort(function() {return Math.random() - 0.5 }))).toBe("object");
@@ -83,11 +86,13 @@ describe('game', () => {
     it('should be a function', () => {
       expect(typeof game.cleanGame).toBe('function');
     });
+    
     it('should return True if clean game', () => {
       expect(game.cleanGame()).toBe(true);
     });
   });
 
+//result=game.endGame(level,cardSelection,nickName,min,sec);
   describe('game.endGame', () => {
     it('should be a function', () => {
       expect(typeof game.endGame).toBe('function');

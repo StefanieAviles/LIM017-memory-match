@@ -10,5 +10,8 @@ export default {
     { id: 'squirtle', image: 'https://www.serebii.net/pokemongo/pokemon/007.png', bgColor: '#1572B6' },
     { id: 'wartortle', image: 'https://www.serebii.net/pokemongo/pokemon/008.png', bgColor: '#1572B6' },
     { id: 'blastoise', image: 'https://www.serebii.net/pokemongo/pokemon/009.png', bgColor: '#1572B6' },
+    { id: 'caterpie', image: 'https://www.serebii.net/pokemongo/pokemon/010.png', bgColor: '#FFD700' },
+    { id: 'metapod', image: 'https://www.serebii.net/pokemongo/pokemon/011.png', bgColor: '#FFD700' },
+    { id: 'butterfree', image: 'https://www.serebii.net/pokemongo/pokemon/012.png', bgColor: '#FFD700' },
   ],
 };

@@ -104,7 +104,8 @@ const game = {
     
     topRanking: function(){
         arrayTopHTML=[];
-        if(!arrayRanking){
+        console.log(arrayRanking);
+        if(arrayRanking){
             for (let index = 0; index < 5; index++) {
                 const el = document.createElement('span');
                 el.classList.add('top');
@@ -113,6 +114,6 @@ const game = {
             } 
         }
         return arrayTopHTML;
-    }
+    },
 }
 export default game;
