@@ -14,9 +14,20 @@ import webdev from '../data/webdev/webdev.js';
 //   .then(console.log)
 //   .catch(console.error);
 //
-const App = (numCard,type_card) => {
+let flipBack ="";
+
+const App = (id,bgColor,image) => {
+    const el = document.createElement('div');
+    el.className = 'Card';
+    el.id = id;
+    el.style.backgroundColor = bgColor;
+    el.style.backgroundImage = 'url("'+image+'")';
+    el.classList.add(flipBack);  
+  return el;
+};
+
+const ArrayCard = (numCard,type_card) => {
   let arrayData=[];  
-  let flipBack ="";
   if(type_card==="radio_pokemon"){
     arrayData=pokemon.items.sort(function() {return Math.random() - 0.5 });
     flipBack="flipBack1";
@@ -27,22 +38,10 @@ const App = (numCard,type_card) => {
   }
   let arrayCard=[];
   for (let index = 0; index < numCard; index++) {
-    const el = document.createElement('div');
-    el.className = 'Card';
-    el.id = arrayData[index].id;
-    el.style.backgroundColor = arrayData[index].bgColor;
-    el.style.backgroundImage = 'url("'+arrayData[index].image+'")';
-    el.classList.add(flipBack);
-    const el2 = document.createElement('div');
-    el2.className = 'Card';
-    el2.id = arrayData[index].id;
-    el2.style.backgroundColor = arrayData[index].bgColor;
-    el2.style.backgroundImage = 'url("'+arrayData[index].image+'")';
-    el2.classList.add(flipBack);
-    arrayCard.push(el);
-    arrayCard.push(el2);
+    arrayCard.push(App(arrayData[index].id,arrayData[index].bgColor,arrayData[index].image));
+    arrayCard.push(App(arrayData[index].id,arrayData[index].bgColor,arrayData[index].image));
   }
   return arrayCard.sort(function() {return Math.random() - 0.5 });
 };
 
-export default App;
+export default ArrayCard;

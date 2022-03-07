@@ -1,4 +1,4 @@
-import App from "./components/App.js";
+import ArrayCard from "./components/App.js";
 import game from "./components/game.js";
 
 //Declaracion de variables
@@ -147,7 +147,7 @@ playButton.addEventListener("click", ()=> {
 });
 
 const startGame = (numCard,level,cardSelection) => {
-    array_cards=App(numCard,cardSelection);
+    array_cards=ArrayCard(numCard,cardSelection);
     start_sound.play();
     game.cleanGame();
     startTimer(numCard,level,cardSelection,input.value);
