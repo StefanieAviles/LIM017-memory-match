@@ -104,14 +104,21 @@ const game = {
     
     topRanking: function(){
         arrayTopHTML=[];
-        console.log(arrayRanking);
-        if(arrayRanking){
+        if(arrayRanking.length>5){
             for (let index = 0; index < 5; index++) {
                 const el = document.createElement('span');
                 el.classList.add('top');
                 el.innerHTML = (index+1)+' : '+arrayRanking[index].nickname+' => '+arrayRanking[index].time+'<br><br>';
                 arrayTopHTML.push(el);
             } 
+        }
+        else{
+            for (let index = 0; index < arrayRanking.length; index++) {
+                const el = document.createElement('span');
+                el.classList.add('top');
+                el.innerHTML = (index+1)+' : '+arrayRanking[index].nickname+' => '+arrayRanking[index].time+'<br><br>';
+                arrayTopHTML.push(el);
+            }  
         }
         return arrayTopHTML;
     },
