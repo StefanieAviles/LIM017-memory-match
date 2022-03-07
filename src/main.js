@@ -33,6 +33,7 @@ const start_againButton = document.getElementById("finish");
 
 const pattern = new RegExp("^[A-Za-z0-9]+$");
 const start_sound = new Audio("audio/StartSound.mp3");
+let type_cards;
 let array_cards = [];
 let array_top = [];
 let numCard=0;
@@ -57,6 +58,7 @@ exitButton.addEventListener("click", ()=> {
         element.remove();
     });
     array_cards=[];
+    type_cards.checked = false;
     navigation(1);
 });
 //Funcion que verifica si el nickname ingresado es valido
@@ -91,7 +93,8 @@ continueButton.addEventListener("click", ()=> {
 });
 //Funcion que valida si al menos se ha elegido un tipo de baraja
 function validate_radio(){
-    if(!document.querySelector('input[name="card_selection"]:checked')){        
+    type_cards = document.querySelector('input[name="card_selection"]:checked');
+    if(!type_cards){        
         return false;
     }else{
         return true;
@@ -124,7 +127,8 @@ playButton.addEventListener("click", ()=> {
             cards_table.classList.add("styleRoot3");
         }
         //Invocamos a APP
-        startGame(numCard,level.value,document.querySelector('input[name="card_selection"]:checked').id);
+        
+        startGame(numCard,level.value,type_cards.id);
          
 
         //Funcionalidad para volver a jugar
@@ -134,7 +138,7 @@ playButton.addEventListener("click", ()=> {
                 element.remove();
             });
             array_cards=[];
-            startGame(numCard,level.value,document.querySelector('input[name="card_selection"]:checked').id);
+            startGame(numCard,level.value,type_cards.id);
         });
     }else{
         alert ("Debes elegir al menos un tipo de baraja y un nivel");
@@ -150,7 +154,7 @@ const startGame = (numCard,level,cardSelection) => {
     array_cards.forEach(element => {
         cards_table.appendChild(element);
         element.addEventListener("click", function(){
-            correctCards=game.clickCard(element,document.querySelector('input[name="card_selection"]:checked').id);
+            correctCards=game.clickCard(element,type_cards.id);
         });
     }); 
     
@@ -204,6 +208,7 @@ play_againButton.addEventListener("click",()=>{
     });
     array_top=[];
     correctCards=0;
+    type_cards.checked = false;
     navigation(3);
     
 });
@@ -218,6 +223,7 @@ start_againButton.addEventListener("click",()=> {
     });
     array_top=[];
     correctCards=0;
+    type_cards.checked = false;
     navigation(3);
 });
 
