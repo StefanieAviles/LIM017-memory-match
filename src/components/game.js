@@ -32,8 +32,8 @@ const game = {
             else if(selectCard2===""){
                 active=false;  
                 selectCard2=element;
-                
-                if(this.constrastCard(selectCard1.id,selectCard2.id)===false){   
+                let result=this.constrastCard(selectCard1.id,selectCard2.id);
+                if(result===false){   
                     setTimeout(() => {            
                         selectCard1.classList.add(flipBack);
                         selectCard2.classList.add(flipBack);
@@ -112,7 +112,6 @@ const game = {
             arrayTopHTML=game.createRanking(5);
         }
         else{
-            console.log(typeof arrayRanking.length);
             arrayTopHTML=game.createRanking(arrayRanking.length);
         }
         return arrayTopHTML;
