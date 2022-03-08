@@ -92,8 +92,8 @@ const game = {
     },
 
     endGame: function(level,cardSelection,nickName,min,sec){
-       // console.log(typeof level, typeof cardSelection,typeof nickName, typeof min, typeof sec );
-        if(typeof sec != "number" || typeof level!= "string" || typeof min!= "string"||typeof cardSelection!= "string"|| typeof nickName!= "string") {
+       console.log(typeof level, typeof cardSelection,typeof nickName, typeof min, typeof sec );
+        if(typeof sec != "string" || typeof level!= "string" || typeof min!= "string"||typeof cardSelection!= "string"|| typeof nickName!= "string") {
             throw new TypeError("Parametros incorrectos");
         }
         idPlayer=ranking.items.length+1;
@@ -109,22 +109,24 @@ const game = {
     topRanking: function(){
         arrayTopHTML=[];
         if(arrayRanking.length>5){
-            for (let index = 0; index < 5; index++) {
-                const el = document.createElement('span');
-                el.classList.add('top');
-                el.innerHTML = (index+1)+' : '+arrayRanking[index].nickname+' => '+arrayRanking[index].time+'<br><br>';
-                arrayTopHTML.push(el);
-            } 
+            arrayTopHTML=game.createRanking(5);
         }
         else{
-            for (let index = 0; index < arrayRanking.length; index++) {
-                const el = document.createElement('span');
-                el.classList.add('top');
-                el.innerHTML = (index+1)+' : '+arrayRanking[index].nickname+' => '+arrayRanking[index].time+'<br><br>';
-                arrayTopHTML.push(el);
-            }  
+            console.log(typeof arrayRanking.length);
+            arrayTopHTML=game.createRanking(arrayRanking.length);
         }
         return arrayTopHTML;
     },
+    createRanking: function(length) {
+        let arrayTop5=[];
+        for (let index = 0; index < length; index++) {
+            const el = document.createElement('span');
+            el.classList.add('top');
+            el.innerHTML = (index+1)+' : '+arrayRanking[index].nickname +' => '+arrayRanking[index].time+'<br><br>';
+            arrayTop5.push(el);
+        } 
+        return arrayTop5;
+    },
+
 }
 export default game;

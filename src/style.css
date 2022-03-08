@@ -50,6 +50,7 @@ div{
     border-radius:20rem;
     margin: 20rem 400rem;
     height: 298rem;
+    min-width: 200rem;
 }
 .styleRoot1{
     margin: 2% 30%;

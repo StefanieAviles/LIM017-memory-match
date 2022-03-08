@@ -138,5 +138,14 @@ describe('game', () => {
       expect(typeof game.topRanking()).toBe('object');
     });
   });
+  //createRanking: function(length) 
+  describe('game.createRanking', () => {
+    it('should be a function', () => {
+      expect(typeof game.createRanking).toBe('function');
+    });
+    it('should return Array Html', () => {
+      expect(game.createRanking(1)).toBe('object');
+    });
+  });
 });
 
