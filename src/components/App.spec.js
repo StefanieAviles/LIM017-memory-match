@@ -60,7 +60,11 @@ describe('game', () => {
       expect(() => game.clickCard(0)).toThrow(TypeError);
       expect(() => game.clickCard(null, [])).toThrow(TypeError);
       expect(() => game.clickCard(0, 0)).toThrow(TypeError);
-    });   
+    });  
+    it('should return 0 with "radio_pokemon"', ()=>{
+      let element = document.createElement('div');
+      expect(game.clickCard(element, "radio_pokemon")).toBe(0);
+    });
   });
   //constrastCard: function(selectCard1,selectCard2)
   describe('game.constrastCard', ()=>{
@@ -111,13 +115,18 @@ describe('game', () => {
     });
   });
 
-//result=game.endGame(level,cardSelection,nickName,min,sec);
+//endGame: function(level,cardSelection,nickName,min,sec);
   describe('game.endGame', () => {
     it('should be a function', () => {
       expect(typeof game.endGame).toBe('function');
     });
+    it('should throw TypeError when invoked with wrong argument types', () => {
+      expect(() => game.endGame()).toThrow(TypeError);
+      expect(() => game.endGame(null)).toThrow(TypeError);
+      expect(() => game.endGame([])).toThrow(TypeError);
+    });
     it('should return Array Objects', () => {
-      expect(typeof game.endGame()).toBe('object');
+      expect(typeof game.endGame("1","radio_pokemon","Maria","0",17)).toBe('object');
     });
   });
 

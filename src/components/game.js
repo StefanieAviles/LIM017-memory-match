@@ -92,6 +92,10 @@ const game = {
     },
 
     endGame: function(level,cardSelection,nickName,min,sec){
+       // console.log(typeof level, typeof cardSelection,typeof nickName, typeof min, typeof sec );
+        if(typeof sec != "number" || typeof level!= "string" || typeof min!= "string"||typeof cardSelection!= "string"|| typeof nickName!= "string") {
+            throw new TypeError("Parametros incorrectos");
+        }
         idPlayer=ranking.items.length+1;
         ranking.items.push({id:idPlayer,nickname:nickName, time:min+":"+sec,level:level,type:cardSelection});
         arrayRanking=ranking.items.filter(item => { return item.level == level && item.type==cardSelection; }).sort(function(a,b){
