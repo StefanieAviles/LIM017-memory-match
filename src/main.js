@@ -210,6 +210,7 @@ play_againButton.addEventListener("click",()=>{
     correctCards=0;
     type_cards.checked = false;
     navigation(3);
+    fifth_window.classList.remove("show");
     
 });
 start_againButton.addEventListener("click",()=> {
@@ -225,6 +226,7 @@ start_againButton.addEventListener("click",()=> {
     correctCards=0;
     type_cards.checked = false;
     navigation(3);
+    sixth_window.classList.remove("show");
 });
 
 const navigation = position =>{
