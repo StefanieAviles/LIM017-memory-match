@@ -17,18 +17,34 @@ describe('game', () => {
       expect(() => game.clickCard(null, [])).toThrow(TypeError);
       expect(() => game.clickCard(0, 0)).toThrow(TypeError);
     });  
-    it('should return 0 with "radio_pokemon"', ()=>{
+    it('should return 0 with "radio_pokemon" equal', ()=>{
       let element = document.createElement('div');
       element.id = 'id1';
       expect(game.clickCard(element, "radio_pokemon")).toBe(0);
     });
-    it('should return 0 with "radio_web"', ()=>{
+    it('should return 1 with "radio_pokemon 2" equal', ()=>{
+        let element = document.createElement('div');
+        element.id = 'id1';
+        expect(game.clickCard(element, "radio_pokemon")).toBe(1);
+      });
+    it('should return 1 with "radio_web" different', ()=>{
       let element = document.createElement('div');
-      element.id = 'id2';
-      expect(game.clickCard(element, "radio_web")).toBe(0);
+      element.id = 'id1';
+      expect(game.clickCard(element, "radio_web")).toBe(1);
     });
-
+    it('should return 1 with "radio_web" different', ()=>{
+        let element = document.createElement('div');
+        element.id = 'id2';
+        expect(game.clickCard(element, "radio_web")).toBe(1);
+      });
   });
+
+  describe('game.rotateCard', () => {
+    it('should be a function', () => {
+      expect(typeof game.rotateCard).toBe('function');
+    });
+  });
+
 
   //constrastCard: function(selectCard1,selectCard2)
   describe('game.constrastCard', ()=>{

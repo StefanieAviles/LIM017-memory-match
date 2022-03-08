@@ -10,6 +10,7 @@ let idPlayer='';
 let arrayRanking=[];
 let arrayTopHTML=[];
 let positionPlayer='';
+let flipBack="";
 
 const game = {
     clickCard: function(element,card_selection){
@@ -18,7 +19,6 @@ const game = {
         }  
         if(active===true){
             element.classList.add('disable-div');
-            let flipBack="";
             if(card_selection==="radio_pokemon"){
                 flipBack="flipBack1";
             }else{
@@ -34,14 +34,7 @@ const game = {
                 selectCard2=element;
                 let result=this.constrastCard(selectCard1.id,selectCard2.id);
                 if(result===false){   
-                    setTimeout(() => {            
-                        selectCard1.classList.add(flipBack);
-                        selectCard2.classList.add(flipBack);
-                        card_audio.play();
-                        selectCard1.classList.remove("disable-div");
-                        selectCard2.classList.remove("disable-div");
-                        active=true;
-                    }, 1000);
+                   this.rotateCard();
                 }
                 else{                    
                     active=true;
@@ -57,6 +50,17 @@ const game = {
             }
          }
          return correctCard;
+    },
+
+    rotateCard: function () {
+        setTimeout(() => {            
+            selectCard1.classList.add(flipBack);
+            selectCard2.classList.add(flipBack);
+            card_audio.play();
+            selectCard1.classList.remove("disable-div");
+            selectCard2.classList.remove("disable-div");
+            active=true;
+        }, 1000);
     },
 
     constrastCard: function(card1,card2){
