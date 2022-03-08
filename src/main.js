@@ -1,4 +1,4 @@
-import ArrayCard from "./components/App.js";
+import {ArrayCard} from "./components/App.js";
 import game from "./components/game.js";
 
 //Declaracion de variables
