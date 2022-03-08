@@ -168,7 +168,7 @@ const startTimer = (numCard,level,cardSelection,nickName) => {
     cont=setInterval(function(){
         if(game.correctCard(numCard,correctCards)){
             clearInterval(cont); 
-            result=game.endGame(level,cardSelection,nickName,min,sec);
+            result=game.endGame(level,cardSelection,nickName,min.toString(),sec.toString());
             results_nickname.innerText=result.nickname;
             result_time.innerText=result.time;
             result_position.innerText=result.position;

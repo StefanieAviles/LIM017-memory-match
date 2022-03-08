@@ -93,7 +93,7 @@ const game = {
 
     endGame: function(level,cardSelection,nickName,min,sec){
        // console.log(typeof level, typeof cardSelection,typeof nickName, typeof min, typeof sec );
-        if(typeof sec != "number" || typeof level!= "string" || typeof min!= "string"||typeof cardSelection!= "string"|| typeof nickName!= "string") {
+        if(typeof sec != "string" || typeof level!= "string" || typeof min!= "string"||typeof cardSelection!= "string"|| typeof nickName!= "string") {
             throw new TypeError("Parametros incorrectos");
         }
         idPlayer=ranking.items.length+1;
