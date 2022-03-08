@@ -14,9 +14,8 @@ import webdev from '../data/webdev/webdev.js';
 //   .then(console.log)
 //   .catch(console.error);
 //
-let flipBack ="";
 
-const App = (id,bgColor,image) => {
+const App = (id,bgColor,image,flipBack) => {
     const el = document.createElement('div');
     el.className = 'Card';
     el.id = id;
@@ -27,6 +26,7 @@ const App = (id,bgColor,image) => {
 };
 
 const ArrayCard = (numCard,type_card) => {
+  let flipBack ="";
   let arrayData=[];  
   if(type_card==="radio_pokemon"){
     arrayData=pokemon.items.sort(function() {return Math.random() - 0.5 });
@@ -38,10 +38,10 @@ const ArrayCard = (numCard,type_card) => {
   }
   let arrayCard=[];
   for (let index = 0; index < numCard; index++) {
-    arrayCard.push(App(arrayData[index].id,arrayData[index].bgColor,arrayData[index].image));
-    arrayCard.push(App(arrayData[index].id,arrayData[index].bgColor,arrayData[index].image));
+    arrayCard.push(App(arrayData[index].id,arrayData[index].bgColor,arrayData[index].image,flipBack));
+    arrayCard.push(App(arrayData[index].id,arrayData[index].bgColor,arrayData[index].image,flipBack));
   }
   return arrayCard.sort(function() {return Math.random() - 0.5 });
 };
 
-export default ArrayCard;
+export {App, ArrayCard};
