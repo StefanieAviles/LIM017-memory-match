@@ -126,7 +126,7 @@ describe('game', () => {
       expect(() => game.endGame([])).toThrow(TypeError);
     });
     it('should return Array Objects', () => {
-      expect(typeof game.endGame("1","radio_pokemon","Maria","0",17)).toBe('object');
+      expect(typeof game.endGame("1","radio_pokemon","Maria","0","17")).toBe('object');
     });
   });
 
@@ -144,7 +144,7 @@ describe('game', () => {
       expect(typeof game.createRanking).toBe('function');
     });
     it('should return Array Html', () => {
-      expect(game.createRanking(1)).toBe('object');
+      expect(typeof game.createRanking(1)).toBe('object');
     });
   });
 });

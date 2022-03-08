@@ -92,7 +92,7 @@ const game = {
     },
 
     endGame: function(level,cardSelection,nickName,min,sec){
-       console.log(typeof level, typeof cardSelection,typeof nickName, typeof min, typeof sec );
+       // console.log(typeof level, typeof cardSelection,typeof nickName, typeof min, typeof sec );
         if(typeof sec != "string" || typeof level!= "string" || typeof min!= "string"||typeof cardSelection!= "string"|| typeof nickName!= "string") {
             throw new TypeError("Parametros incorrectos");
         }
