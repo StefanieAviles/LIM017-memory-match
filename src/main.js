@@ -30,7 +30,6 @@ const top5Button = document.getElementById("top_5");
 const play_againButton = document.getElementById("start_again");
 const start_againButton = document.getElementById("finish");
 
-
 const pattern = new RegExp("^[A-Za-z0-9]+$");
 const start_sound = new Audio("audio/StartSound.mp3");
 let type_cards;
@@ -110,7 +109,6 @@ function validate_select(){
 }
 //Damos funcionalidad al boton para mostrar la siguiente ventana    
 playButton.addEventListener("click", ()=> {
-
     //Si al menos eligio una baraja y un nivel muestra la siguiente pantalla   
     if(validate_radio() && validate_select()) {
         navigation(4);
@@ -125,12 +123,8 @@ playButton.addEventListener("click", ()=> {
         else{
             numCard=12;
             cards_table.classList.add("styleRoot3");
-        }
-        //Invocamos a APP
-        
+        }        
         startGame(numCard,level.value,type_cards.id);
-         
-
         //Funcionalidad para volver a jugar
         updateButton.addEventListener("click", ()=> {
             navigation(4);
@@ -145,7 +139,7 @@ playButton.addEventListener("click", ()=> {
     }    
       
 });
-
+//Funcion para comenzar a jugar donde se invoca a la funcion que creara el tablero de cartas
 const startGame = (numCard,level,cardSelection) => {
     array_cards=ArrayCard(numCard,cardSelection);
     start_sound.play();

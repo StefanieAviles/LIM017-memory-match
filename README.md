@@ -68,31 +68,33 @@ varias personas acerca de lo que esperarian de un juego con las caracteristicas 
 |Se debe mostar el puesto en el ranking que gano en el juego con su tiempo obtenido|
 |***DEFINICION DE TERMINADO***|
 |Se accede al ranking existente y al tiempo que le llevo al jugador resolverlo y se muestra en pantalla|
-***
-#### Prototipo de baja fidelidad
-
-Primero se diseno un prototipo en papel, para dar forma a nuestras ideas, el cual se muestra a continuacion:
 
 ***
 #### Prototipo de alta fidelidad
 Tomando en cuenta los datos anteriores, se realizo un prototipo en Figma, el mismo que se muestra a continuacion:
+![](src/image/FigmaPrototype.jpg)
+
+_ [Link del prototipo](https://www.figma.com/file/euXJoPKR6ImAIHWerDs7XB/Untitled?node-id=0%3A1)_.
 
 ***
 #### Testeos de usabilidad - Listado de problemas
 
-Aqui va: Incluye el listado de problemas que detectaste a través de tests de
-  usabilidad
-  1 er problema: estabamos usando terminos que no se comprendian 
-  En la 1era version de nuestro juego nos encontramos con algunas personas que indicaron que algunos
-  terminos utilizados no se comprendian, por lo que cambiamos dichos terminos, como por ejemplo, en la
-  eleccion del tipo de baraja estabamos usando el nombre "Web Developer" que fue reemplazado por
-  "Desarrollo Web"
-  
+Inicialmente usamos terminos que no se comprendian 
+En la 1era version de nuestro juego nos encontramos con algunas personas que indicaron que algunos
+terminos utilizados no se comprendian, por lo que cambiamos dichos terminos, como por ejemplo, en la
+eleccion del tipo de baraja estabamos usando el nombre "Web Developer" que fue reemplazado por
+"Desarrollo Web".
+
+Los botones para jugar nuevamente estaban direccionando al jugador al principio de tod el juego, aceptamos
+la sugerencia de direccionar estos botones hacia la ventana donde se elije el tipo de cartas  y el nivel 
+conservando el mismo nickname.
+ 
   
 ***
 #### Planes de accion
-(Objetivos de Aprendizaje priorizados) de cada programadora
+Nuestra planeacion la hicimos a traves de TRELLO, con reuniones periodicas para revisar y establecer los objetivos
+de cada sprint, cada vez que se conseguia terminar un objetivo se modificaba el tablero para mantener la organizacion, a continuacion se muestra nuestro tablero.
 
-***Gina***
+![](src/image/TrelloMM.jpg)
 
-***Myriam***
+

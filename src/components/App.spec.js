@@ -1,7 +1,6 @@
-import {App, ArrayCard} from './App.js';
+import {App, ArrayCard} from './App.js'
 import pokemon from '../data/pokemon/pokemon.js';
 import webdev from '../data/webdev/webdev.js';
-//import ranking from '../data/ranking/ranking.js';
 
 describe('App', () => {
   it('should be a function', ()=>{
@@ -44,3 +43,6 @@ describe('ArrayCard', () => {
   });
  
 });
+
+
+

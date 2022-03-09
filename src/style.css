@@ -6,17 +6,28 @@
 html{
     font-size:1px;
 }
-
 body{
     display:block;
     background-image: url("image/Background3.gif");
     background-position: center;
     align-items:center;
     justify-content: center;
-    height: 80%;
-    padding:0;
-    margin:0;
-    
+    height: 80%;  
+}
+header{
+    background-color: rgba(223,253,39,0.8);
+    display:none;
+    pointer-events: none;
+    width: 100%;
+    height: 60rem;
+}
+img{
+    display: block;
+    width: 45%;
+    height:45%;
+    margin-top: 22rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 p{
     font-size:x-large;
@@ -32,47 +43,6 @@ div{
     justify-content:center;
     align-content: center;
 }
-.Card{
-    width: 150rem;
-    height: 220rem;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius:10rem; 
-    margin: 5rem;
-    transition: 0.6s;
-}
-#root{
-    background-color:rgba(73, 28, 177, 0.3);
-    border-radius:20rem;
-}
-#top{
-    background-color:rgba(73, 28, 177, 0.3);
-    border-radius:20rem;
-    margin: 20rem 25%;
-    height: 298rem;
-    min-width: 300rem;
-}
-.styleRoot1{
-    margin: 2% 30%;
-    padding: 30rem 0rem;
-    width: 40%;
-}
-.styleRoot2{
-    margin: 2% 10%;
-    padding:40rem 0rem;
-    width: 80%;
-}
-.styleRoot3{
-    margin: 2% 2%;
-    padding: 10rem 0;
-    width: 95%;
-}
-#cards_type{
-    padding-top:0rem;
-    justify-content:space-evenly;
-    margin-bottom: 20rem;
-}
-
 select{
     border-radius: 3rem;
     margin-left: 45%;
@@ -97,84 +67,9 @@ input{
 label{
     cursor: pointer;
 }
-.radio_img{
-    height:95rem;
-    width: 250rem;
-    border-radius:5rem;
-    box-shadow: 3rem 3rem 5rem rgb(248, 245, 248);
-    margin-top: 5rem;
-}
-.radioButton{
-    height: 20rem;
-    width: 20rem;
-}
-
-header{
-    background-color: rgba(223,253,39,0.8);
-    display:none;
-    pointer-events: none;
-    width: 100%;
-    height: 60rem;
-}
-#Update{    
-    display: inline-block;
-    background-image: url("image/UpdateButton.jpg");
-    width: 50rem;
-    height: 50rem;   
-    margin-right: 5rem;
-    
-}
-footer{
-    background-image: url("image/footer.jpg");
-    width: 100%;
-    color: rgb(12, 226, 241);
-    font-size:20rem;
-    font-family: Comic Sans MS;
-    text-align:center;
-    height: 60rem;
-    background-repeat:no-repeat;
-    background-size: cover;
-    margin-top: 5rem;
-    padding-top: 15rem;
-    text-shadow: 0em 0em 1em greenyellow;
-}
-#typing{
-    border-radius:50%;
-    max-width:140rem;
-}
-.hideUpdate{
-    opacity: 0;
-}
-#Exit{
-    display: inline-block;
-    background-image: url("image/ExitButton.jpg");
-    width: 50rem;
-    height: 50rem;  
-}
-#LettersMemoryMatch{
-    background-image: url("image/MemoryMatchLetters.jpg");
-    width: 170rem;
-    height: 60rem;
-    margin-left:1%;
-    margin-top:0;
-}
-#claps_image{
-    width:150rem;
-    height:181rem;
-}
-.nav_buttons{
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;      
-    border-radius: 5rem;
-    margin-top: 5rem;
-}
 ul{
     display: flex;
     margin-right: 5rem;
-}
-#Exit:hover , #Update:hover{
-    box-shadow: 2rem 2rem 20rem rgb(56, 54, 53);
 }
 nav{
     display:flex;
@@ -205,31 +100,6 @@ h3{
     text-shadow: 5px 3px 5px rgb(230, 69, 28);
 }
 
-.container{
-    display: none;
-    pointer-events: none;
-    margin-bottom: 50rem;
-}
-.show{
-    display: block;
-    pointer-events: auto;
-}
-.hide{
-    display: none;
-    pointer-events: none;
-}
-.showheader{
-    display: inline-block;  
-    pointer-events: auto;
-}
-img{
-    display: block;
-    width: 45%;
-    height:45%;
-    margin-top: 22rem;
-    margin-left: auto;
-    margin-right: auto;
-}
 button{
     background-color: rgba(166,255,0.5);
     display: block;
@@ -250,6 +120,82 @@ button:hover{
     color:rgb(255, 253, 253);
     box-shadow: 0 4px 10px rgb(255,255,255);
 }
+footer{
+    background-image: url("image/footer.jpg");
+    width: 100%;
+    color: rgb(12, 226, 241);
+    font-size:20rem;
+    font-family: Comic Sans MS;
+    text-align:center;
+    height: 60rem;
+    background-repeat:no-repeat;
+    background-size: cover;
+    margin-top: 5rem;
+    padding-top: 15rem;
+    text-shadow: 0em 0em 1em greenyellow;
+}
+.Card{
+    width: 150rem;
+    height: 220rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius:10rem; 
+    margin: 5rem;
+    transition: 0.6s;
+}
+.styleRoot1{
+    margin: 2% 30%;
+    padding: 30rem 0rem;
+    width: 40%;
+}
+.styleRoot2{
+    margin: 2% 10%;
+    padding:40rem 0rem;
+    width: 80%;
+}
+.styleRoot3{
+    margin: 2% 2%;
+    padding: 10rem 0;
+    width: 95%;
+}
+.radio_img{
+    height:95rem;
+    width: 250rem;
+    border-radius:5rem;
+    box-shadow: 3rem 3rem 5rem rgb(248, 245, 248);
+    margin-top: 5rem;
+}
+.radioButton{
+    height: 20rem;
+    width: 20rem;
+}
+.hideUpdate{
+    opacity: 0;
+}
+.nav_buttons{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;      
+    border-radius: 5rem;
+    margin-top: 5rem;
+}
+.container{
+    display: none;
+    pointer-events: none;
+    margin-bottom: 50rem;
+}
+.show{
+    display: block;
+    pointer-events: auto;
+}
+.hide{
+    display: none;
+    pointer-events: none;
+}
+.showheader{
+    display: inline-block;  
+    pointer-events: auto;
+}
 .flipBack1{
     background-image: url("image/BarajaPokemon.jpg") !important;
     background-repeat: no-repeat;
@@ -267,16 +213,6 @@ button:hover{
 .error_input{
     border-color: red;
 }
-#player{
-    font-size:20rem;
-    font-family: Ink Free;
-    font-weight:bold;
-    color:black;
-    width: 170rem;
-    height: 60rem;
-    margin-left:1%;
-    margin-top:0;
-}
 .timer{
     font-size:30rem;
     font-family: Forte;
@@ -289,16 +225,70 @@ button:hover{
 .showAnimation{
     animation: waves 2s linear 0.1s;
 }
-
 .disable-div {
     pointer-events: none;
 }
-
 .top{
     display: block;
     width: 100%;
 }
-
+#root{
+    background-color:rgba(73, 28, 177, 0.3);
+    border-radius:20rem;
+}
+#cards_type{
+    padding-top:0rem;
+    justify-content:space-evenly;
+    margin-bottom: 20rem;
+}
+#top{
+    background-color:rgba(73, 28, 177, 0.3);
+    border-radius:20rem;
+    margin: 20rem 25%;
+    height: 298rem;
+    min-width: 300rem;
+}
+#Exit:hover , #Update:hover{
+    box-shadow: 2rem 2rem 20rem rgb(56, 54, 53);
+}
+#Exit{
+    display: inline-block;
+    background-image: url("image/ExitButton.jpg");
+    width: 50rem;
+    height: 50rem;  
+}
+#Update{    
+    display: inline-block;
+    background-image: url("image/UpdateButton.jpg");
+    width: 50rem;
+    height: 50rem;   
+    margin-right: 5rem;
+}
+#typing{
+    border-radius:50%;
+    max-width:140rem;
+}
+#LettersMemoryMatch{
+    background-image: url("image/MemoryMatchLetters.jpg");
+    width: 170rem;
+    height: 60rem;
+    margin-left:1%;
+    margin-top:0;
+}
+#claps_image{
+    width:150rem;
+    height:181rem;
+}
+#player{
+    font-size:20rem;
+    font-family: Ink Free;
+    font-weight:bold;
+    color:black;
+    width: 170rem;
+    height: 60rem;
+    margin-left:1%;
+    margin-top:0;
+}
 @keyframes waves{
     0%{
         box-shadow: 0 0 0 0 rgba(174, 231, 67,0.6),0 0 0 0 rgba(174, 231, 67,0.6);
@@ -313,12 +303,10 @@ button:hover{
         box-shadow: 0 0 0 0 rgba(174, 231, 67,0),0 0 0 30rem rgba(174, 231, 67,0);
     }
 }
-
 @media (max-width:800px) {
     html{
         font-size:0.7px;
-    }
-    
+    }    
     #cards_type{
         flex-direction: column;
     }

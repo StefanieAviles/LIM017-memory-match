@@ -4,19 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Match</title>
-    <link rel="stylesheet" href="style.css" media="all" />
+    <link rel="stylesheet" href="style.css" media="screen" />
     <link rel="icon" href="image/Icon.jpg" />   
   </head>
   <body>
-    <header class="header" id="header">
+    <header id="header" class="header" >
       <nav>
-        <a class="nav_buttons" id="LettersMemoryMatch">
-        </a>
+        <div id="LettersMemoryMatch" class="nav_buttons" ></div>
         <div id="timer" class="timer" value="" finish="false">00:00</div>
         <div id="player"></div>
         <ul>
           <li>
-            <a class="nav_buttons" id="Update"></a>
+            <a id="Update" class="nav_buttons"></a>
           </li>
           <li>
             <a id="Exit" class="nav_buttons"></a>
@@ -29,7 +28,7 @@
       <button id="Btn1">COMENZAR</button>
     </section> 
 
-      <section class="container"  id="second_window">  
+    <section class="container"  id="second_window">  
       <h2>Por favor ingresa tu Nickname que sera tu nombre en este juego</h2>
       <h3>Puede contener letras y numeros, minimo 3 y maximo 10 caracteres</h3>
       <input type="text" id="Nickname">
@@ -60,9 +59,11 @@
       </select>
       <button id="Btn3">JUGAR</button>
     </section>
+
     <section class="container"  id="fourth_window">       
-      <div id="root" ></div> 
+      <div id="root"></div> 
     </section>
+
     <section class="container"  id="fifth_window">       
       <h2>Bien hecho <span id="nickname_result"></span></h2>
       <h3>Lo hiciste en: <span id="time_result"></span></h3>
@@ -73,15 +74,16 @@
         <button id="start_again">Jugar otra vez</button>
       </div>
     </section>
+
     <section class="container"  id="sixth_window">       
       <h2>TOP 5</h2>
       <div id="top" ></div>
       <button id="finish">Jugar otra vez</button>
     </section>
+
     <footer>Developed by Gina Aviles & Myriam Salazar</footer>
-    
+
     <script src="main.js" type="module"></script>
     
-  </body>
-  
+  </body>  
 </html>
