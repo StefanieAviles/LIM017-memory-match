@@ -13,6 +13,7 @@ let positionPlayer='';
 let flipBack="";
 
 const game = {
+    
     clickCard: function(element,card_selection){
         if(!element || !card_selection || typeof element != "object" || typeof card_selection != "string") {
             throw new TypeError("Parametros incorrectos");
@@ -51,7 +52,7 @@ const game = {
          }
          return correctCard;
     },
-
+//Funcion que realiza el efecto de voltear cartas
     rotateCard: function () {
         setTimeout(() => {            
             selectCard1.classList.add(flipBack);
@@ -62,7 +63,7 @@ const game = {
             active=true;
         }, 1000);
     },
-
+//Funcion que compara si las cartas volteadas son iguales
     constrastCard: function(card1,card2){
         if(!card1 || !card2 || typeof card1 != "string" || typeof card2 != "string") {
             throw new TypeError("Parametros incorrectos");
@@ -74,7 +75,7 @@ const game = {
             return false;
         }  
     },
-
+//Funcion que verifica si el numero de cartas volteadas es igual al numero de cartas elegidas
     correctCard: function(numCard,corrects){
        if(!numCard || typeof numCard != "number") {
             throw new TypeError("Parametros incorrectos");
@@ -87,14 +88,14 @@ const game = {
         }
          
     },
-
+//Funcio que encera los contadores para un nuevo juego
     cleanGame: function(){
         correctCard=0; 
         selectCard1="";
         selectCard2="";
         return true;
     },
-
+//Funcion que retorna los datos del jugador una vez q finaliza el juego
     endGame: function(level,cardSelection,nickName,min,sec){
        // console.log(typeof level, typeof cardSelection,typeof nickName, typeof min, typeof sec );
         if(typeof sec != "string" || typeof level!= "string" || typeof min!= "string"||typeof cardSelection!= "string"|| typeof nickName!= "string") {
@@ -109,7 +110,7 @@ const game = {
         positionPlayer=arrayRanking.findIndex(item => {return item.id===idPlayer})+1;
         return {'nickname':nickName,'time':min+':'+sec,'position':positionPlayer};
     },
-    
+ //Funcion que devuelve top 5 de mejores tiempos   
     topRanking: function(){
         arrayTopHTML=[];
         if(arrayRanking.length>5){
