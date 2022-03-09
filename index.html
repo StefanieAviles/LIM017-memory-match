@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match</title>
+    <link rel="stylesheet" href="style.css" media="screen" />
+    <link rel="icon" href="image/Icon.jpg" />   
+  </head>
+  <body>
+    <header id="header" class="header" >
+      <nav>
+        <div id="LettersMemoryMatch" class="nav_buttons" ></div>
+        <div id="timer" class="timer" value="" finish="false">00:00</div>
+        <div id="player"></div>
+        <ul>
+          <li>
+            <a id="Update" class="nav_buttons"></a>
+          </li>
+          <li>
+            <a id="Exit" class="nav_buttons"></a>
+          </li>
+        </ul>     
+      </nav>
+    </header> 
+    <section class="container_first"  id="first_window">   
+      <img src="image/MemoryMatch.png" id="LogoMemoryMatch">
+      <button id="Btn1">COMENZAR</button>
+    </section> 
+
+    <section class="container"  id="second_window">  
+      <h2>Por favor ingresa tu Nickname que sera tu nombre en este juego</h2>
+      <h3>Puede contener letras y numeros, minimo 3 y maximo 10 caracteres</h3>
+      <input type="text" id="Nickname">
+      <p id="error_message">.</p> 
+      <img src="image/typing.gif" id="typing">
+      <button id="Btn2">CONTINUAR</button>
+    </section>
+
+    <section class="container"  id="third_window">  
+      <h2>Hola <span id="span_nickname"></span></h2><br>
+      <h3>Por favor elije el tema de tu baraja</h3>
+      <div id="cards_type">
+      <label>
+        <input type="radio" class="radioButton" name="card_selection" id="radio_pokemon"/>
+        <img src="image/PokemonLetters.jpg"  class= "radio_img" id="pokemon_letters">
+      </label>
+      <label>
+        <input type="radio" class = "radioButton" name="card_selection" id="radio_web"/>
+        <img src="image/WebDevelopLetters.jpg" class= "radio_img" id="web_letters">
+      </label>
+      </div>
+      <h3>Ahora elije el nivel en el que deseas jugar</h3>
+      <select id="level">
+        <option value="0">Seleccionar...</option>
+        <option value="1">Facil</option>
+        <option value="2">Intermedio</option>
+        <option value="3">Dificil</option>
+      </select>
+      <button id="Btn3">JUGAR</button>
+    </section>
+
+    <section class="container"  id="fourth_window">       
+      <div id="root"></div> 
+    </section>
+
+    <section class="container"  id="fifth_window">       
+      <h2>Bien hecho <span id="nickname_result"></span></h2>
+      <h3>Lo hiciste en: <span id="time_result"></span></h3>
+      <h3>Ganaste el puesto <span id="position"></span> de nuestro ranking </h3>
+      <img id="claps_image"src="image/Yupi.gif">
+      <div>
+        <button id="top_5">Revisar Top 5</button>
+        <button id="start_again">Jugar otra vez</button>
+      </div>
+    </section>
+
+    <section class="container"  id="sixth_window">       
+      <h2>TOP 5</h2>
+      <div id="top" ></div>
+      <button id="finish">Jugar otra vez</button>
+    </section>
+
+    <footer>Developed by Gina Aviles & Myriam Salazar</footer>
+
+    <script src="main.js" type="module"></script>
+    
+  </body>  
+</html>
