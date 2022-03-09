@@ -140,7 +140,7 @@ playButton.addEventListener("click", ()=> {
       
 });
 //Funcion para comenzar a jugar donde se invoca a la funcion que creara el tablero de cartas
-const startGame = (numCard,level,cardSelection) => {
+function startGame (numCard,level,cardSelection) {
     array_cards=ArrayCard(numCard,cardSelection);
     start_sound.play();
     game.cleanGame();
@@ -154,7 +154,7 @@ const startGame = (numCard,level,cardSelection) => {
     
 }
 
-const startTimer = (numCard,level,cardSelection,nickName) => {
+function startTimer(numCard,level,cardSelection,nickName){
     clearInterval(cont);
     total= 0;
     min= 0;
@@ -222,8 +222,8 @@ start_againButton.addEventListener("click",()=> {
     navigation(3);
     sixth_window.classList.remove("show");
 });
-
-const navigation = position =>{
+//Funcion que hace que las ventanas vayan apareciendo y desapareciendo la anterior
+function navigation(position){
     switch (position) {
         case 1:
             first_window.classList.remove("hide");
@@ -233,8 +233,7 @@ const navigation = position =>{
             fourth_window.classList.remove("show");  
             fifth_window.classList.remove("show");
             sixth_window.classList.remove("show");
-            timer.classList.add("hide");
-            
+            timer.classList.add("hide");            
             break;
 
         case 2:
@@ -272,8 +271,7 @@ const navigation = position =>{
 
         case 6:
             sixth_window.classList.add("show");
-            fifth_window.classList.remove("show");
-            
+            fifth_window.classList.remove("show");            
             break;
 
         default:

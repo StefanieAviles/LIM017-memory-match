@@ -15,7 +15,7 @@ const ArrayCard = (numCard,type_card) => {
   let flipBack ="";
   let arrayData=[];  
   if(type_card==="radio_pokemon"){
-    arrayData=pokemon.items.sort(function() {return Math.random() - 0.5 });
+    arrayData=pokemon.items.sort(function() {return Math.random() - 0.5});
     flipBack="flipBack1";
   }
   else if(type_card==="radio_web"){
