@@ -82,6 +82,13 @@ Tomando en cuenta los datos anteriores, se realizo un prototipo en Figma, el mis
 
 Aqui va: Incluye el listado de problemas que detectaste a través de tests de
   usabilidad
+  1 er problema: estabamos usando terminos que no se comprendian 
+  En la 1era version de nuestro juego nos encontramos con algunas personas que indicaron que algunos
+  terminos utilizados no se comprendian, por lo que cambiamos dichos terminos, como por ejemplo, en la
+  eleccion del tipo de baraja estabamos usando el nombre "Web Developer" que fue reemplazado por
+  "Desarrollo Web"
+  
+  
 ***
 #### Planes de accion
 (Objetivos de Aprendizaje priorizados) de cada programadora

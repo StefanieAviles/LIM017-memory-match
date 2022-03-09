@@ -48,9 +48,9 @@ div{
 #top{
     background-color:rgba(73, 28, 177, 0.3);
     border-radius:20rem;
-    margin: 20rem 400rem;
+    margin: 20rem 25%;
     height: 298rem;
-    min-width: 200rem;
+    min-width: 300rem;
 }
 .styleRoot1{
     margin: 2% 30%;
